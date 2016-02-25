@@ -60,23 +60,72 @@ namespace BridgeDealingApplication
 
                 //Get hand name and display
                 String name=((Seat)i).ToString();
-                listBoxOutput.Items.Add(name);
-                listBoxOutput.Items.Add("--------");
+                //listBoxOutput.Items.Add(name);
+                //listBoxOutput.Items.Add("--------");
 
                 //Display cards in the hand
 
                 //Get the cards
                 Card[] cards = theHands[i].getCards();
+                //Sort the hand first
+                Array.Sort(cards);
                 //Loop through them
-                for (int j = 0; j < cards.Length; j++)
+
+                string[] tempStrings = new string[4];
+                //TODO, have these letters come from the first letter of each rank?
+                //Ranks are not in the order to be displayed
+                tempStrings[0] = "S:\t";
+                tempStrings[1] = "H:\t";
+                tempStrings[2] = "D:\t";
+                tempStrings[3] = "C:\t";
+
+                //Loop through the hand and add each card to it string to be printed
+                //Assume cards are already sorted
+
+                foreach(Card card in cards)
                 {
-                    //Add card to listbox
-                    listBoxOutput.Items.Add(cards[j]);
+                    string ourCardCode = "";
+
+                    //Create our own numbering convention for the cards
+                    //Adding two because previous code adds two for the rank
+                    switch (card.getRank())
+                    {
+                        case Rank.ACE:
+                            ourCardCode = "A";
+                            break;
+                        case Rank.KING:
+                            ourCardCode = "K";
+                            break;
+                        case Rank.QUEEN:
+                            ourCardCode = "Q";
+                            break;
+                        case Rank.JACK:
+                            ourCardCode = "J";
+                            break;
+                        case Rank.TEN:
+                            ourCardCode = "T";
+                            break;
+
+                        //If not a picture card(or Ace) its is a number
+                        default:
+                            ourCardCode = ((int)(card.getRank())).ToString();
+                            break;
+                    }
+
+                    //Add the card to the list under the correct suit list
+                    tempStrings[(int)card.getSuit()] += ourCardCode+" ";
                 }
 
-                    //Seperator at bottom of display
-                    listBoxOutput.Items.Add("");
-                    listBoxOutput.Items.Add("");
+                //Add totals to listbox
+                //Not using for loop because we want a different order (SHDC instead of original CDHS)
+               foreach(String text in tempStrings)
+                {
+                    listBoxOutput.Items.Add(text);
+                }
+
+                //Add HCP and player seperator to box
+               listBoxOutput.Items.Add("HCP: " + theHands[i].getHCP());
+               listBoxOutput.Items.Add(" -------------------------------------------------");
             }
 
         }

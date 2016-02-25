@@ -6,10 +6,33 @@ using System.Threading.Tasks;
 
 namespace BridgeDealingApplication
 {
-    class Card
+    class Card : IComparable
     {
         private Suit suit;
         private Rank rank;
+
+        /// <summary>
+        /// Default comparator for Cards to be used with Array.sort
+        /// </summary>
+        /// <param name="obj">Other object to compare to</param>
+        /// <returns>0 if the same or -n/+n depending on which comes first</returns>
+        int IComparable.CompareTo(object obj)
+        {
+            //Get other object and dereference
+            Card other=(Card)obj;
+
+            //Check sorting by suit first
+            if (this.suit == other.suit)
+            {
+                //If the same suit, sort by rank descending
+                return (other.rank-this.rank);
+            }
+            else
+            {
+                //Sort by the suit
+                return (this.suit - other.suit);
+            }
+        }
 
         /// <summary>
         /// Create a new card with the given parameters
