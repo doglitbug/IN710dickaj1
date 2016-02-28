@@ -34,19 +34,19 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxAddYear = new System.Windows.Forms.TextBox();
             this.groupBoxAdd = new System.Windows.Forms.GroupBox();
-            this.textBoxAddTitle = new System.Windows.Forms.TextBox();
             this.textBoxAddDirector = new System.Windows.Forms.TextBox();
+            this.textBoxAddTitle = new System.Windows.Forms.TextBox();
             this.groupBoxDelete = new System.Windows.Forms.GroupBox();
-            this.buttonDelete = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
             this.textBoxDeleteYear = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.buttonDelete = new System.Windows.Forms.Button();
             this.groupBoxSearch = new System.Windows.Forms.GroupBox();
-            this.buttonSearch = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
             this.textBoxSearchYear = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.buttonSearch = new System.Windows.Forms.Button();
             this.groupBoxPrintAll = new System.Windows.Forms.GroupBox();
-            this.buttonPrintAll = new System.Windows.Forms.Button();
             this.textBoxPrintAll = new System.Windows.Forms.TextBox();
+            this.buttonPrintAll = new System.Windows.Forms.Button();
             this.groupBoxAdd.SuspendLayout();
             this.groupBoxDelete.SuspendLayout();
             this.groupBoxSearch.SuspendLayout();
@@ -61,6 +61,7 @@
             this.buttonAdd.TabIndex = 0;
             this.buttonAdd.Text = "Add Movie";
             this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // label1
             // 
@@ -112,19 +113,19 @@
             this.groupBoxAdd.TabStop = false;
             this.groupBoxAdd.Text = "Add Movie";
             // 
-            // textBoxAddTitle
-            // 
-            this.textBoxAddTitle.Location = new System.Drawing.Point(205, 43);
-            this.textBoxAddTitle.Name = "textBoxAddTitle";
-            this.textBoxAddTitle.Size = new System.Drawing.Size(357, 20);
-            this.textBoxAddTitle.TabIndex = 5;
-            // 
             // textBoxAddDirector
             // 
             this.textBoxAddDirector.Location = new System.Drawing.Point(205, 70);
             this.textBoxAddDirector.Name = "textBoxAddDirector";
             this.textBoxAddDirector.Size = new System.Drawing.Size(357, 20);
             this.textBoxAddDirector.TabIndex = 6;
+            // 
+            // textBoxAddTitle
+            // 
+            this.textBoxAddTitle.Location = new System.Drawing.Point(205, 43);
+            this.textBoxAddTitle.Name = "textBoxAddTitle";
+            this.textBoxAddTitle.Size = new System.Drawing.Size(357, 20);
+            this.textBoxAddTitle.TabIndex = 5;
             // 
             // groupBoxDelete
             // 
@@ -138,14 +139,12 @@
             this.groupBoxDelete.TabStop = false;
             this.groupBoxDelete.Text = "Delete Movie";
             // 
-            // buttonDelete
+            // textBoxDeleteYear
             // 
-            this.buttonDelete.Location = new System.Drawing.Point(6, 16);
-            this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(112, 31);
-            this.buttonDelete.TabIndex = 0;
-            this.buttonDelete.Text = "Delete Movie";
-            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.textBoxDeleteYear.Location = new System.Drawing.Point(206, 16);
+            this.textBoxDeleteYear.Name = "textBoxDeleteYear";
+            this.textBoxDeleteYear.Size = new System.Drawing.Size(356, 20);
+            this.textBoxDeleteYear.TabIndex = 2;
             // 
             // label4
             // 
@@ -156,12 +155,15 @@
             this.label4.TabIndex = 1;
             this.label4.Text = "Year";
             // 
-            // textBoxDeleteYear
+            // buttonDelete
             // 
-            this.textBoxDeleteYear.Location = new System.Drawing.Point(206, 16);
-            this.textBoxDeleteYear.Name = "textBoxDeleteYear";
-            this.textBoxDeleteYear.Size = new System.Drawing.Size(356, 20);
-            this.textBoxDeleteYear.TabIndex = 2;
+            this.buttonDelete.Location = new System.Drawing.Point(6, 16);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(112, 31);
+            this.buttonDelete.TabIndex = 0;
+            this.buttonDelete.Text = "Delete Movie";
+            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // groupBoxSearch
             // 
@@ -175,14 +177,12 @@
             this.groupBoxSearch.TabStop = false;
             this.groupBoxSearch.Text = "Search Movie";
             // 
-            // buttonSearch
+            // textBoxSearchYear
             // 
-            this.buttonSearch.Location = new System.Drawing.Point(6, 19);
-            this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(112, 31);
-            this.buttonSearch.TabIndex = 3;
-            this.buttonSearch.Text = "Search Movie";
-            this.buttonSearch.UseVisualStyleBackColor = true;
+            this.textBoxSearchYear.Location = new System.Drawing.Point(205, 16);
+            this.textBoxSearchYear.Name = "textBoxSearchYear";
+            this.textBoxSearchYear.Size = new System.Drawing.Size(356, 20);
+            this.textBoxSearchYear.TabIndex = 3;
             // 
             // label5
             // 
@@ -193,12 +193,15 @@
             this.label5.TabIndex = 3;
             this.label5.Text = "Year";
             // 
-            // textBoxSearchYear
+            // buttonSearch
             // 
-            this.textBoxSearchYear.Location = new System.Drawing.Point(205, 16);
-            this.textBoxSearchYear.Name = "textBoxSearchYear";
-            this.textBoxSearchYear.Size = new System.Drawing.Size(356, 20);
-            this.textBoxSearchYear.TabIndex = 3;
+            this.buttonSearch.Location = new System.Drawing.Point(6, 19);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(112, 31);
+            this.buttonSearch.TabIndex = 3;
+            this.buttonSearch.Text = "Search Movie";
+            this.buttonSearch.UseVisualStyleBackColor = true;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
             // groupBoxPrintAll
             // 
@@ -211,15 +214,6 @@
             this.groupBoxPrintAll.TabStop = false;
             this.groupBoxPrintAll.Text = "Print All";
             // 
-            // buttonPrintAll
-            // 
-            this.buttonPrintAll.Location = new System.Drawing.Point(6, 19);
-            this.buttonPrintAll.Name = "buttonPrintAll";
-            this.buttonPrintAll.Size = new System.Drawing.Size(112, 31);
-            this.buttonPrintAll.TabIndex = 4;
-            this.buttonPrintAll.Text = "Print All";
-            this.buttonPrintAll.UseVisualStyleBackColor = true;
-            // 
             // textBoxPrintAll
             // 
             this.textBoxPrintAll.Location = new System.Drawing.Point(135, 20);
@@ -228,6 +222,16 @@
             this.textBoxPrintAll.ReadOnly = true;
             this.textBoxPrintAll.Size = new System.Drawing.Size(425, 231);
             this.textBoxPrintAll.TabIndex = 5;
+            // 
+            // buttonPrintAll
+            // 
+            this.buttonPrintAll.Location = new System.Drawing.Point(6, 19);
+            this.buttonPrintAll.Name = "buttonPrintAll";
+            this.buttonPrintAll.Size = new System.Drawing.Size(112, 31);
+            this.buttonPrintAll.TabIndex = 4;
+            this.buttonPrintAll.Text = "Print All";
+            this.buttonPrintAll.UseVisualStyleBackColor = true;
+            this.buttonPrintAll.Click += new System.EventHandler(this.buttonPrintAll_Click);
             // 
             // Form1
             // 
@@ -240,6 +244,7 @@
             this.Controls.Add(this.groupBoxAdd);
             this.Name = "Form1";
             this.Text = "Movie Database";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBoxAdd.ResumeLayout(false);
             this.groupBoxAdd.PerformLayout();
             this.groupBoxDelete.ResumeLayout(false);
