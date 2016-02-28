@@ -85,7 +85,7 @@ namespace BestMovieDatabase
         {
             int key;
             //Check year is valid
-            if(!checkYear(year, out key, out feedback))
+            if (!checkYear(year, out key, out feedback))
             {
                 return false;
             }
@@ -104,7 +104,8 @@ namespace BestMovieDatabase
             }
         }
 
-        public Boolean SearchMovie(String year, out String feedback){
+        public Boolean SearchMovie(String year, out String feedback)
+        {
             int key;
             //Check year is valid
             if (!checkYear(year, out key, out feedback))
@@ -114,7 +115,7 @@ namespace BestMovieDatabase
             //Check key exists
             if (movieTable.ContainsKey(key))
             {
-                feedback=movieTable[key].ToString();
+                feedback = movieTable[key].ToString();
                 return true;
             }
             else
@@ -132,20 +133,21 @@ namespace BestMovieDatabase
         /// <param name="year">Int of the valid year</param>
         /// <param name="feedback">Feedback regarding the conversion/check. Empty if correct</param>
         /// <returns>True if year is valid</returns>
-        private Boolean checkYear(String input, out int year,out String feedback)
+        private Boolean checkYear(String input, out int year, out String feedback)
         {
             feedback = "";
             //Try convert given year string into a number
             try
             {
-                year = Convert.ToInt16(input);                
+                year = Convert.ToInt16(input);
             }
-           //Catch incorrect format i.e letters instead of plain numbers
-           catch (FormatException){
-                   feedback = "Year was not entered in a correct format, ie 1956.";
-                   year = 0;
-                   return false;
-             }
+            //Catch incorrect format i.e letters instead of plain numbers
+            catch (FormatException)
+            {
+                feedback = "Year was not entered in a correct format, ie 1956.";
+                year = 0;
+                return false;
+            }
             //Handle other exceptions
             catch (Exception ex)
             {
@@ -157,7 +159,7 @@ namespace BestMovieDatabase
             //Check the number is with in reasonable bounds
             if (!((year >= EARLIEST_YEAR) & (year <= DateTime.Now.Year)))
             {
-                feedback = "Invalid year: please choose something between "+EARLIEST_YEAR+" and now.";
+                feedback = "Invalid year: please choose something between " + EARLIEST_YEAR + " and now.";
                 return false;
             }
             return true;
@@ -171,7 +173,7 @@ namespace BestMovieDatabase
         {
             //Create a stringbuilder to hold the results to be passed back
             StringBuilder result = new StringBuilder();
-            
+
             //Check to see if there are any movies in the database
             if (movieTable.Count() == 0)
             {
@@ -179,12 +181,25 @@ namespace BestMovieDatabase
             }
             else
             {
+                //Sort the movies by year
+                //Do this by retrieving all the keys in an array and sorting them
+                //Use the sorted array to grab the movies from the dictionary
+
+                //Get list of keys
+                List<int> keyList = new List<int>(movieTable.Keys);
+
+                //Sort the keys
+                keyList.Sort();
+
+
                 //Get all the movies
-                foreach (KeyValuePair<int, Movie> currentMovie in movieTable)
+                foreach (int currentKey in keyList)
                 {
+                    //Get current movie and write out
+                    Movie currentMovie = movieTable[currentKey];
                     result.Append("-------------------------------------------\r\n");
-                    result.Append(currentMovie.Key.ToString()+"\r\n");
-                    result.Append(currentMovie.Value.ToString()+"\r\n");
+                    result.Append(currentMovie.Year.ToString() + "\r\n");
+                    result.Append(currentMovie.ToString() + "\r\n");
                 }
             }
             return result.ToString();

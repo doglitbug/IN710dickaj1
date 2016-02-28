@@ -220,6 +220,7 @@
             this.textBoxPrintAll.Multiline = true;
             this.textBoxPrintAll.Name = "textBoxPrintAll";
             this.textBoxPrintAll.ReadOnly = true;
+            this.textBoxPrintAll.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.textBoxPrintAll.Size = new System.Drawing.Size(425, 231);
             this.textBoxPrintAll.TabIndex = 5;
             // 
