@@ -110,9 +110,9 @@ namespace BestMovieDatabase
         private void buttonPrintAll_Click(object sender, EventArgs e)
         {
             //Clear textBox of previous entries
-            textBoxPrintAll.Clear();
+            richTextBoxPrintAll.Clear();
             //Ask the movie database for a list of all movies
-            textBoxPrintAll.Text = movieDatabase.ToString();
+            richTextBoxPrintAll.Text = movieDatabase.ToString();
         }
     }
 }

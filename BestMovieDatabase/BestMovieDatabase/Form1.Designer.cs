@@ -45,8 +45,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.groupBoxPrintAll = new System.Windows.Forms.GroupBox();
-            this.textBoxPrintAll = new System.Windows.Forms.TextBox();
             this.buttonPrintAll = new System.Windows.Forms.Button();
+            this.richTextBoxPrintAll = new System.Windows.Forms.RichTextBox();
             this.groupBoxAdd.SuspendLayout();
             this.groupBoxDelete.SuspendLayout();
             this.groupBoxSearch.SuspendLayout();
@@ -205,7 +205,7 @@
             // 
             // groupBoxPrintAll
             // 
-            this.groupBoxPrintAll.Controls.Add(this.textBoxPrintAll);
+            this.groupBoxPrintAll.Controls.Add(this.richTextBoxPrintAll);
             this.groupBoxPrintAll.Controls.Add(this.buttonPrintAll);
             this.groupBoxPrintAll.Location = new System.Drawing.Point(13, 245);
             this.groupBoxPrintAll.Name = "groupBoxPrintAll";
@@ -213,16 +213,6 @@
             this.groupBoxPrintAll.TabIndex = 3;
             this.groupBoxPrintAll.TabStop = false;
             this.groupBoxPrintAll.Text = "Print All";
-            // 
-            // textBoxPrintAll
-            // 
-            this.textBoxPrintAll.Location = new System.Drawing.Point(135, 20);
-            this.textBoxPrintAll.Multiline = true;
-            this.textBoxPrintAll.Name = "textBoxPrintAll";
-            this.textBoxPrintAll.ReadOnly = true;
-            this.textBoxPrintAll.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBoxPrintAll.Size = new System.Drawing.Size(425, 231);
-            this.textBoxPrintAll.TabIndex = 5;
             // 
             // buttonPrintAll
             // 
@@ -233,6 +223,14 @@
             this.buttonPrintAll.Text = "Print All";
             this.buttonPrintAll.UseVisualStyleBackColor = true;
             this.buttonPrintAll.Click += new System.EventHandler(this.buttonPrintAll_Click);
+            // 
+            // textBoxPrintAll
+            // 
+            this.richTextBoxPrintAll.Location = new System.Drawing.Point(138, 19);
+            this.richTextBoxPrintAll.Name = "textBoxPrintAll";
+            this.richTextBoxPrintAll.Size = new System.Drawing.Size(423, 238);
+            this.richTextBoxPrintAll.TabIndex = 5;
+            this.richTextBoxPrintAll.Text = "";
             // 
             // Form1
             // 
@@ -253,7 +251,6 @@
             this.groupBoxSearch.ResumeLayout(false);
             this.groupBoxSearch.PerformLayout();
             this.groupBoxPrintAll.ResumeLayout(false);
-            this.groupBoxPrintAll.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -277,8 +274,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button buttonSearch;
         private System.Windows.Forms.GroupBox groupBoxPrintAll;
-        private System.Windows.Forms.TextBox textBoxPrintAll;
         private System.Windows.Forms.Button buttonPrintAll;
+        private System.Windows.Forms.RichTextBox richTextBoxPrintAll;
     }
 }
 
