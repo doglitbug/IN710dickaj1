@@ -103,7 +103,38 @@ namespace RainbowChicken2016
         //==============================================================================
         public void DeleteOne(Pellet pelletToDelete)
         {
-            throw new NotImplementedException();
+            //Check if this is the first node in the list
+            if (headPointer == pelletToDelete)
+            {
+                //Check if it is the only node in the list
+                if (tailPointer == pelletToDelete)
+                {
+                    headPointer = tailPointer = null;
+                }
+                else
+                {
+                    headPointer = pelletToDelete.Next;
+                }
+            }
+            else
+            {
+                //Prepare to walk the list
+                Pellet pelletWalker = headPointer;
+
+                //Find the pellet before pelletToDelete
+                while (pelletWalker.Next != pelletToDelete)
+                {
+                    pelletWalker = pelletWalker.Next;
+                }
+                //Found previous pellet, swoop around
+                pelletWalker.Next = pelletToDelete.Next;
+
+                //Check this wasn't the last node in the list
+                if (tailPointer == null)
+                {
+                    tailPointer = pelletWalker;
+                }
+            }
         }
 
         //==============================================================================
@@ -111,7 +142,19 @@ namespace RainbowChicken2016
         //==============================================================================
         public void DeleteNotAlive()
         {
-            throw new NotImplementedException();
+            //Start pellet
+            Pellet pelletWalker = headPointer;
+
+            while (pelletWalker != null)
+            {
+                //Check if pellet needs to be removed and call method to do so
+                if (pelletWalker.IsAlive != true)
+                {
+                    DeleteOne(pelletWalker);
+                }
+                //Move to the next item in the linked list
+                pelletWalker = pelletWalker.Next;
+            }
         }
 
         //==============================================================================
