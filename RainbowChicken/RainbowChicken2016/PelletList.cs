@@ -134,7 +134,9 @@ namespace RainbowChicken2016
                 pelletWalker.Next = pelletToDelete.Next;
 
                 //Check this wasn't the last node in the list
-                if (tailPointer == null)
+                //Changed this from "tailPointer == null" incase it was only working due to
+                //efficent garbage collection
+                if (pelletWalker.Next==null)
                 {
                     tailPointer = pelletWalker;
                 }
