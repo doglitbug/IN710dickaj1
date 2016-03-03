@@ -116,11 +116,14 @@ namespace RainbowChicken2016
                     headPointer = tailPointer = null;
                 }
                 else
+                    //More than one pellet in the list
                 {
+                    //Move the headpointer to the next pellet
                     headPointer = pelletToDelete.Next;
                 }
             }
             else
+                //Not the first pellet and more than one in the list
             {
                 //Prepare to walk the list
                 Pellet pelletWalker = headPointer;
