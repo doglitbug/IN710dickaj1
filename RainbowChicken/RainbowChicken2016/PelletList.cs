@@ -90,7 +90,11 @@ namespace RainbowChicken2016
             while (pelletWalker != null)
             {
                 //Check if pellet is out of bounds and kill if so
-                pelletWalker.IsAlive=pelletWalker.TestOutOfBounds(boundsRectangle);
+                if (pelletWalker.TestOutOfBounds(boundsRectangle))
+                {
+                    pelletWalker.IsAlive = false;
+                }
+
                 //Move to the next item in the linked list
                 pelletWalker = pelletWalker.Next;
             }
