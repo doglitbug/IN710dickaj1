@@ -13,7 +13,7 @@ namespace StackImplementation
         public Node(String data)
         {
             Data = data;
-            Next = null;
+            Next = null; //ESSENTIAL for being a list node
         }
     }
 }

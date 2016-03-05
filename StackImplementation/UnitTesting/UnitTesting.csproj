@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>ac10071e-b8ee-49fb-8cba-144cf18f54bb</ProjectGuid>
+    <ProjectGuid>{24499017-CFF2-4BFE-AD60-18D4698B7296}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>UnitTesting</RootNamespace>
