@@ -58,9 +58,94 @@ namespace UnitTesting
         }
 
         //////Test Pop Method
+        [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void Pop_CalledOnNewStack_ReturnException()
+        {
+            Stack target = new Stack();
 
-        //////Test Peek Method 
+            target.Pop();
 
+            Assert.Fail();
+        }
+
+        [TestMethod]
+        public void Pop_PushOneItemPop_ReturnLastItem()
+        {
+            Stack target = new Stack();
+            String testItem="My apples are bad";
+
+            target.Push(testItem);
+
+            String expected = testItem;
+            String actual = target.Pop();
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Pop_PushOneItemPopCount_ReturnZero()
+        {
+            Stack target = new Stack();
+            String testItem = "My apples are bad";
+
+            target.Push(testItem);
+            target.Pop();
+
+            int expected = 0;
+            int actual = target.Count();
+
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void Pop_PushSeveralItemsPopOne_ReturnLastItem()
+        {
+            Stack target = new Stack();
+
+            target.Push("a");
+            target.Push("b");
+            target.Push("c");
+            target.Push("d");
+            target.Push("e");
+            target.Push("f");
+
+            String expected = "f";
+            String actual = target.Pop();
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Pop_PushSeveralItemsPopOneAndCount_ReturnNMinusOne()
+        {
+            Stack target = new Stack();
+
+            target.Push("a");
+            target.Push("b");
+            target.Push("c");
+            target.Push("d");
+            target.Push("e");
+            target.Push("f");
+
+            target.Pop();
+
+            int expected = 5;
+            int actual = target.Count();
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        //////Test Peek Method
+        [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void Peek_CalledOnNewStack_ReturnException()
+        {
+            Stack target = new Stack();
+
+            target.Peek();
+
+            Assert.Fail();
+        }
         //////Test Count Method
         [TestMethod]
         public void Count_CalledOnNewStack_ReturnZero()

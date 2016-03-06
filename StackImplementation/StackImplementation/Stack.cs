@@ -84,7 +84,7 @@ namespace StackImplementation
             //Check this is not an empty list
             if (tailPointer == null)
             {
-                throw new Exception("Cannot return result for Peek: Stack is empty");
+                throw new System.InvalidOperationException("Stack is empty");
             }
 
             //Grab last Node in list
