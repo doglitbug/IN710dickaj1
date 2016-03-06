@@ -88,10 +88,44 @@ namespace StackImplementation
             }
 
             //Grab last Node in list
-            Node lastNode = tailPointer.Next;
+            Node lastNode = tailPointer;
             //Grab String from this Node
             result = lastNode.Data;
 
+            return result;
+        }
+
+        public String Pop()
+        {
+            String result;
+
+            //Grab data from last node
+            result = Peek();
+
+            //Remove last Node
+
+            //Check if the stack has only one item
+            if (headPointer == tailPointer)
+            {
+                headPointer = tailPointer = null;
+            }
+            else
+            {
+                //Prepare to walk list to find previous Node
+                Node nodeWalker = headPointer;
+
+                while (nodeWalker.Next != tailPointer)
+                {
+                    nodeWalker = nodeWalker.Next;
+                }
+                //Found previous Node
+                //Set Next to null as it is now the last Node
+                nodeWalker.Next = null;
+
+                //Set tailPointer to last item in list
+                tailPointer = nodeWalker;
+
+            }
             return result;
         }
     }
