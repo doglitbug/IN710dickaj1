@@ -7,6 +7,60 @@ namespace UnitTesting
     [TestClass]
     public class UnitTest1
     {
+        //////Test Push Method
+        [TestMethod]
+        public void Push_OneItemOnNewStackCallPeek_ReturnItem()
+        {
+            Stack target = new Stack();
+            String testItem = "MyApplesAreBad";
+
+            target.Push(testItem);
+
+            String expected = testItem;
+            String actual = target.Peek();
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Push_OneItemOnAlargeStackCallPeek_ReturnItem()
+        {
+            Stack target = new Stack();
+            String testItem = "MyApplesAreBad";
+
+            target.Push("a");
+            target.Push("b");
+            target.Push("c");
+            target.Push("d");
+
+            target.Push(testItem);
+
+            String expected = testItem;
+            String actual = target.Peek();
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Push_SeveralItemsStackCallCount_ReturnItemCount()
+        {
+            Stack target = new Stack();
+
+            target.Push("a");
+            target.Push("b");
+            target.Push("c");
+            target.Push("d");
+
+            int expected = 4;
+            int actual = target.Count();
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        //////Test Pop Method
+
+        //////Test Peek Method 
+
         //////Test Count Method
         [TestMethod]
         public void Count_CalledOnNewStack_ReturnZero()
@@ -79,7 +133,7 @@ namespace UnitTesting
             Assert.AreEqual(expected,actual);
         }
 
-        ///////IsEmpty Method
+        ///////Test IsEmpty Method
         [TestMethod]
         public void IsEmpty_CalledOnNewStack_ReturnTrue() {
             Stack target = new Stack();
@@ -145,6 +199,6 @@ namespace UnitTesting
             Boolean actual = target.IsEmpty();
 
             Assert.AreEqual(expected, actual);
-        }
+        }   
     }
 }
