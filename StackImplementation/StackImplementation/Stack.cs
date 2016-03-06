@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StackImplementation
 {
-    class Stack
+    public class Stack
     {
         /// <summary>
         /// Points to the first Node in the Stack
@@ -30,6 +30,7 @@ namespace StackImplementation
         /// Push a new item onto the Stack
         /// </summary>
         /// <param name="newString">Item to push onto the Stack</param>
+        /// TODO Is a null string allowed or throw an exception?
         public void Push(String newString)
         {
             ///Create the new Node
