@@ -72,5 +72,27 @@ namespace StackImplementation
             return count;
 
         }
+
+        /// <summary>
+        /// Have a look at the last item added to the stack
+        /// </summary>
+        /// <returns>String last added to Stack</returns>
+        public String Peek()
+        {
+            String result;
+
+            //Check this is not an empty list
+            if (tailPointer == null)
+            {
+                throw new Exception("Cannot return result for Peek: Stack is empty");
+            }
+
+            //Grab last Node in list
+            Node lastNode = tailPointer.Next;
+            //Grab String from this Node
+            result = lastNode.Data;
+
+            return result;
+        }
     }
 }
