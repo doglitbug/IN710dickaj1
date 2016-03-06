@@ -5,7 +5,7 @@
 |Stack()       |Constructor||
 ||||
 |void Push()   |Push an item onto a newly created stack then call Peek|Return item|
-|              |Push am item onto the end of a large stack and call Peek|Return item|
+|              |Push an item onto the end of a large stack and call Peek|Return item|
 |              |Push an item onto the end of a large stack and call Count|Return previous count+1|
 ||||
 |String Pop()  |Called on newly created stack|Should throw an exception with an appropriate error message|
