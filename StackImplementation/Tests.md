@@ -5,10 +5,14 @@
 |Stack()       |Constructor||
 ||||
 |void Push()   |Push an item onto a newly created stack then call Peek|Return item|
+|              |Push an item onto the end of a large stack and call Peek|Return item|
+|              |Push several items onto a stack and call Count|Return item count|
 ||||
 |String Pop()  |Called on newly created stack|Should throw an exception with an appropriate error message|
-|              |Push one item onto stack and then Pop|Return last item, check Count()|
-|              |Push n items onto stack and then Pop|Return last item, check Count()|
+|              |Push one item onto stack and then Pop|Return last item|
+|              |Push one item onto stack and then Pop and Count|Return Zero|
+|              |Push n items onto stack and then Pop|Return last item|
+|              |Push n items onto stack and then Pop and Count|Return n-1|
 ||||
 |String Peek() |Called on an empty stack|Should throw an exception with an appropriate error message|
 |              |Push several items onto a stack, then call Peek|Should return last pushed item, but not delete it from stack. Check with Push(), Count(), Peek() then Count()|
