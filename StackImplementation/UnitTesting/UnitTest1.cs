@@ -81,15 +81,70 @@ namespace UnitTesting
 
         ///////IsEmpty Method
         [TestMethod]
-        public void IsEmpty_CalledOnNewStack_ReturnTrue() { }
+        public void IsEmpty_CalledOnNewStack_ReturnTrue() {
+            Stack target = new Stack();
+
+            Boolean expected = true;
+            Boolean actual = target.IsEmpty();
+
+            Assert.AreEqual(expected, actual);
+        }
 
         [TestMethod]
-        public void IsEmpty_PushSeveralAndPopAll_ReturnTrue() { }
+        public void IsEmpty_PushSeveralAndPopAll_ReturnTrue() {
+            Stack target = new Stack();
+            //Push several items
+            target.Push("a");
+            target.Push("b");
+            target.Push("c");
+            target.Push("d");
+            target.Push("e");
+            target.Push("f");
+            target.Push("g");
+
+            //Pop all items
+            target.Pop();
+            target.Pop();
+            target.Pop();
+            target.Pop();
+            target.Pop();
+            target.Pop();
+            target.Pop();
+
+            Boolean expected = true;
+            Boolean actual = target.IsEmpty();
+
+            Assert.AreEqual(expected, actual);
+        }
 
         [TestMethod]
-        public void IsEmpty_CalledOnNonEmptyStack_ReturnFalse() { }
+        public void IsEmpty_CalledOnNonEmptyStack_ReturnFalse() {
+            Stack target = new Stack();
+            //Push several items
+            target.Push("a");
+            target.Push("b");
+            target.Push("c");
+            target.Push("d");
+            target.Push("e");
+            target.Push("f");
+            target.Push("g");
+
+            Boolean expected = false;
+            Boolean actual = target.IsEmpty();
+
+            Assert.AreEqual(expected, actual);
+        }
 
         [TestMethod]
-        public void IsEmpty_CalledOnStackWithOneItem_ReturnFalse() { }
+        public void IsEmpty_CalledOnStackWithOneItem_ReturnFalse() {
+            Stack target = new Stack();
+
+            target.Push("a");
+
+            Boolean expected = false;
+            Boolean actual = target.IsEmpty();
+
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

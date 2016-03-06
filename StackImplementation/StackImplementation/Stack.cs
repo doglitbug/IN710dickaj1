@@ -76,7 +76,7 @@ namespace StackImplementation
         /// <summary>
         /// Have a look at the last item added to the stack
         /// </summary>
-        /// <returns>String last added to Stack</returns>
+        /// <returns>String of last added to Stack</returns>
         public String Peek()
         {
             String result;
@@ -95,6 +95,10 @@ namespace StackImplementation
             return result;
         }
 
+        /// <summary>
+        /// Return last item on the Stack and remove it
+        /// </summary>
+        /// <returns>String of last item added to Stack</returns>
         public String Pop()
         {
             String result;
@@ -127,6 +131,15 @@ namespace StackImplementation
 
             }
             return result;
+        }
+
+        /// <summary>
+        /// Does the stack have zero items on it?
+        /// </summary>
+        /// <returns>True for zero, false otherwise</returns>
+        public Boolean IsEmpty()
+        {
+            return (headPointer == null);
         }
     }
 }
