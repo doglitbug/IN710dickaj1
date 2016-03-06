@@ -146,6 +146,27 @@ namespace UnitTesting
 
             Assert.Fail();
         }
+        [TestMethod]
+        public void Peek_PushSevenPeekAndCount_ReturnSeven()
+        {
+            Stack target = new Stack();
+
+            target.Push("a");
+            target.Push("b");
+            target.Push("c");
+            target.Push("d");
+            target.Push("e");
+            target.Push("f");
+            target.Push("h");
+
+            target.Peek();
+
+            int expected = 7;
+            int actual = target.Count();
+
+            Assert.AreEqual(expected, actual);
+        }
+        
         //////Test Count Method
         [TestMethod]
         public void Count_CalledOnNewStack_ReturnZero()
