@@ -78,5 +78,18 @@ namespace UnitTesting
 
             Assert.AreEqual(expected,actual);
         }
+
+        ///////IsEmpty Method
+        [TestMethod]
+        public void IsEmpty_CalledOnNewStack_ReturnTrue() { }
+
+        [TestMethod]
+        public void IsEmpty_PushSeveralAndPopAll_ReturnTrue() { }
+
+        [TestMethod]
+        public void IsEmpty_CalledOnNonEmptyStack_ReturnFalse() { }
+
+        [TestMethod]
+        public void IsEmpty_CalledOnStackWithOneItem_ReturnFalse() { }
     }
 }
