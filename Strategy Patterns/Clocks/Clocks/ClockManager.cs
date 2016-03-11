@@ -12,33 +12,60 @@ namespace Clocks
         /// Currently used clock
         /// </summary>
         public IClock currentClock;
+        private IClock digitalClockObject;
+        private IClock analogueClockObject;
 
-        public ClockManager() {}
+        public ClockManager(AnalogClockControl.AnalogClock analogueClockFromForm)
+        {
+            //Create the clocks
+            //Create Analogue clock
+            analogueClockObject = new AnalogueClock(analogueClockFromForm);
+            //Create Digital Clock
+            //TODO pass in the label and timer from this constructor
+            digitalClockObject = new DigitalClock();
+
+            //Set default clock
+            currentClock = analogueClockObject;
+        }
+
+        public void UpdateTimeDisplay()
+        {
+            currentClock.UpdateTimeDisplay();
+        }
 
         public void StartClock()
         {
-            throw new NotImplementedException();
+            currentClock.On();
         }
 
         public void StopClock()
         {
-            throw new NotImplementedException();
+            currentClock.Off();
         }
 
+        /// <summary>
+        /// Change the current clock type
+        /// </summary>
+        /// <param name="clockType">1 - Digital 2 - Analogue</param>
         public void ChangeClock(int clockType)
         {
-        switch (clockType)
+            //Hide last clock
+            currentClock.HideClock();
+
+            switch (clockType)
             {
                 case 1:
-                    currentClock = new DigitalClock();
+                    currentClock = digitalClockObject;
                     break;
                 case 2:
-                    currentClock = new AnalogueClock();
+                    currentClock = analogueClockObject;
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
-                    break;
             }
+            //Show the new clock
+            currentClock.ShowClock();
+            //TODO refactor the hide/show as this may cause flicker
         }
     }
 }

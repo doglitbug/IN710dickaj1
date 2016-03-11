@@ -33,6 +33,7 @@
             this.btnStop = new System.Windows.Forms.Button();
             this.rbDigital = new System.Windows.Forms.RadioButton();
             this.rbAnalogue = new System.Windows.Forms.RadioButton();
+            this.roundClock = new AnalogClockControl.AnalogClock();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -84,6 +85,7 @@
             // rbAnalogue
             // 
             this.rbAnalogue.AutoSize = true;
+            this.rbAnalogue.Checked = true;
             this.rbAnalogue.Location = new System.Drawing.Point(314, 51);
             this.rbAnalogue.Name = "rbAnalogue";
             this.rbAnalogue.Size = new System.Drawing.Size(70, 17);
@@ -93,11 +95,25 @@
             this.rbAnalogue.UseVisualStyleBackColor = true;
             this.rbAnalogue.CheckedChanged += new System.EventHandler(this.rbAnalogue_CheckedChanged);
             // 
+            // roundClock
+            // 
+            this.roundClock.Draw1MinuteTicks = true;
+            this.roundClock.Draw5MinuteTicks = true;
+            this.roundClock.HourHandColor = System.Drawing.Color.DarkMagenta;
+            this.roundClock.Location = new System.Drawing.Point(53, 98);
+            this.roundClock.MinuteHandColor = System.Drawing.Color.Green;
+            this.roundClock.Name = "roundClock";
+            this.roundClock.SecondHandColor = System.Drawing.Color.Red;
+            this.roundClock.Size = new System.Drawing.Size(297, 297);
+            this.roundClock.TabIndex = 1;
+            this.roundClock.TicksColor = System.Drawing.Color.Black;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(414, 407);
+            this.Controls.Add(this.roundClock);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
             this.Text = "Strategy Clocks";
@@ -114,6 +130,7 @@
         private System.Windows.Forms.RadioButton rbDigital;
         private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.Button btnStart;
+        private AnalogClockControl.AnalogClock roundClock;
     }
 }
 

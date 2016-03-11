@@ -15,11 +15,12 @@ namespace Clocks
         /// <summary>
         /// Clock manager
         /// </summary>
-        ClockManager manager = new ClockManager();
+        ClockManager manager;
         public Form1()
         {
             InitializeComponent();
-            //Set default clock
+            //TODO Set default clock
+            manager = new ClockManager(roundClock);
         }
 
         private void btnStart_Click(object sender, EventArgs e)

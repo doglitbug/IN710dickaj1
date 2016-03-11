@@ -8,14 +8,19 @@ namespace Clocks
 {
     class AnalogueClock:IClock
     {
+        AnalogClockControl.AnalogClock thisClock;
+        public AnalogueClock(AnalogClockControl.AnalogClock analogueClockFromForm)
+        {
+            thisClock = analogueClockFromForm;
+        }
         public void On()
         {
-            throw new NotImplementedException();
+            thisClock.Start();
         }
 
         public void Off()
         {
-            throw new NotImplementedException();
+            thisClock.Stop();
         }
 
         public void UpdateTimeDisplay()
@@ -25,12 +30,12 @@ namespace Clocks
 
         public void ShowClock()
         {
-            throw new NotImplementedException();
+            thisClock.Visible = true;
         }
 
         public void HideClock()
         {
-            throw new NotImplementedException();
+            thisClock.Visible = false;
         }
     }
 }
