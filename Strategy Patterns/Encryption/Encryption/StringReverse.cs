@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Encryption
 {
-    class StringReverse:IEncryption
+    public class StringReverse:IEncryption
     {
         public string Encrypt(string input)
         {
@@ -18,6 +18,7 @@ namespace Encryption
 
         public string Decrypt(string input)
         {
+            //Yes I realise that this is a really cheap method of decrypting...
             return Encrypt(input);
         }
     }
