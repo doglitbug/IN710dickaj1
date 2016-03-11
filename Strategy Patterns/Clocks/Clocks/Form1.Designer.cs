@@ -57,6 +57,7 @@
             this.btnStart.TabIndex = 0;
             this.btnStart.Text = "Start Clock";
             this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // btnStop
             // 
@@ -66,6 +67,7 @@
             this.btnStop.TabIndex = 1;
             this.btnStop.Text = "Stop Clock";
             this.btnStop.UseVisualStyleBackColor = true;
+            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
             // 
             // rbDigital
             // 
@@ -77,6 +79,7 @@
             this.rbDigital.TabStop = true;
             this.rbDigital.Text = "Digital";
             this.rbDigital.UseVisualStyleBackColor = true;
+            this.rbDigital.CheckedChanged += new System.EventHandler(this.rbDigital_CheckedChanged);
             // 
             // rbAnalogue
             // 
@@ -88,6 +91,7 @@
             this.rbAnalogue.TabStop = true;
             this.rbAnalogue.Text = "Analogue";
             this.rbAnalogue.UseVisualStyleBackColor = true;
+            this.rbAnalogue.CheckedChanged += new System.EventHandler(this.rbAnalogue_CheckedChanged);
             // 
             // Form1
             // 
