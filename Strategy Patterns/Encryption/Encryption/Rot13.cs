@@ -49,7 +49,7 @@ namespace Encryption
         {
             //Yes I realise that this is a really cheap method of decrypting
             //but rot13*2=rot0...
-           return Encrypt(string);
+           return Encrypt(input);
         }
     }
 }

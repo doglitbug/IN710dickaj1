@@ -16,12 +16,12 @@ namespace Encryption
         /// </summary>
         /// <param name="input">String to encrypt</param>
         /// <returns>Encrypted string</returns>
-        public String Encrypt(String input);
+        String Encrypt(String input);
         /// <summary>
         /// Decrypts the given string
         /// </summary>
         /// <param name="input">String to decrypt</param>
         /// <returns>Decrpyted string</returns>
-        public String Decrypt(String input);
+        String Decrypt(String input);
     }
 }

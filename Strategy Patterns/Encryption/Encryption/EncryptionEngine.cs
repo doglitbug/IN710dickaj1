@@ -16,7 +16,7 @@ namespace Encryption
         /// <summary>
         /// Constructor
         /// </summary>
-        public void EncryptionEngine()
+        public EncryptionEngine()
         {
             //Set a default engine in case encrypt/decrypt are called before changeEngine
             //Too lazy to throw exceptions
