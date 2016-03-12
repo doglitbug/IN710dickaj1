@@ -20,7 +20,7 @@ namespace Clocks
         {
             InitializeComponent();
             //TODO Set default clock
-            manager = new ClockManager(roundClock);
+            manager = new ClockManager(lblDigital, roundClock);
         }
 
         private void btnStart_Click(object sender, EventArgs e)

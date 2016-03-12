@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 using System.Threading.Tasks;
 
 namespace Clocks
@@ -15,14 +16,13 @@ namespace Clocks
         private IClock digitalClockObject;
         private IClock analogueClockObject;
 
-        public ClockManager(AnalogClockControl.AnalogClock analogueClockFromForm)
+        public ClockManager(Label digitalClockLabel, AnalogClockControl.AnalogClock analogueClockFromForm)
         {
             //Create the clocks
+            //Create Digital Clock
+            digitalClockObject = new DigitalClock(digitalClockLabel);
             //Create Analogue clock
             analogueClockObject = new AnalogueClock(analogueClockFromForm);
-            //Create Digital Clock
-            //TODO pass in the label and timer from this constructor
-            digitalClockObject = new DigitalClock();
 
             //Set default clock
             currentClock = analogueClockObject;

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 using System.Threading.Tasks;
 
 namespace Clocks
@@ -9,6 +10,14 @@ namespace Clocks
     class DigitalClock:IClock
 
     {
+        Label clockLabel;
+       
+
+        public DigitalClock(Label clockLabel)
+        {
+            this.clockLabel = clockLabel;
+
+        }
         public void On()
         {
             throw new NotImplementedException();
@@ -26,12 +35,12 @@ namespace Clocks
 
         public void ShowClock()
         {
-            throw new NotImplementedException();
+            clockLabel.Visible = true;
         }
 
         public void HideClock()
         {
-            throw new NotImplementedException();
+            clockLabel.Visible = false;
         }
     }
 }

@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnStart = new System.Windows.Forms.Button();
-            this.btnStop = new System.Windows.Forms.Button();
-            this.rbDigital = new System.Windows.Forms.RadioButton();
             this.rbAnalogue = new System.Windows.Forms.RadioButton();
+            this.rbDigital = new System.Windows.Forms.RadioButton();
+            this.btnStop = new System.Windows.Forms.Button();
+            this.btnStart = new System.Windows.Forms.Button();
             this.roundClock = new AnalogClockControl.AnalogClock();
+            this.lblDigital = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,25 +51,18 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Controls";
             // 
-            // btnStart
+            // rbAnalogue
             // 
-            this.btnStart.Location = new System.Drawing.Point(6, 19);
-            this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(75, 23);
-            this.btnStart.TabIndex = 0;
-            this.btnStart.Text = "Start Clock";
-            this.btnStart.UseVisualStyleBackColor = true;
-            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
-            // 
-            // btnStop
-            // 
-            this.btnStop.Location = new System.Drawing.Point(6, 48);
-            this.btnStop.Name = "btnStop";
-            this.btnStop.Size = new System.Drawing.Size(75, 23);
-            this.btnStop.TabIndex = 1;
-            this.btnStop.Text = "Stop Clock";
-            this.btnStop.UseVisualStyleBackColor = true;
-            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
+            this.rbAnalogue.AutoSize = true;
+            this.rbAnalogue.Checked = true;
+            this.rbAnalogue.Location = new System.Drawing.Point(314, 51);
+            this.rbAnalogue.Name = "rbAnalogue";
+            this.rbAnalogue.Size = new System.Drawing.Size(70, 17);
+            this.rbAnalogue.TabIndex = 3;
+            this.rbAnalogue.TabStop = true;
+            this.rbAnalogue.Text = "Analogue";
+            this.rbAnalogue.UseVisualStyleBackColor = true;
+            this.rbAnalogue.CheckedChanged += new System.EventHandler(this.rbAnalogue_CheckedChanged);
             // 
             // rbDigital
             // 
@@ -82,18 +76,25 @@
             this.rbDigital.UseVisualStyleBackColor = true;
             this.rbDigital.CheckedChanged += new System.EventHandler(this.rbDigital_CheckedChanged);
             // 
-            // rbAnalogue
+            // btnStop
             // 
-            this.rbAnalogue.AutoSize = true;
-            this.rbAnalogue.Checked = true;
-            this.rbAnalogue.Location = new System.Drawing.Point(314, 51);
-            this.rbAnalogue.Name = "rbAnalogue";
-            this.rbAnalogue.Size = new System.Drawing.Size(70, 17);
-            this.rbAnalogue.TabIndex = 3;
-            this.rbAnalogue.TabStop = true;
-            this.rbAnalogue.Text = "Analogue";
-            this.rbAnalogue.UseVisualStyleBackColor = true;
-            this.rbAnalogue.CheckedChanged += new System.EventHandler(this.rbAnalogue_CheckedChanged);
+            this.btnStop.Location = new System.Drawing.Point(6, 48);
+            this.btnStop.Name = "btnStop";
+            this.btnStop.Size = new System.Drawing.Size(75, 23);
+            this.btnStop.TabIndex = 1;
+            this.btnStop.Text = "Stop Clock";
+            this.btnStop.UseVisualStyleBackColor = true;
+            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
+            // 
+            // btnStart
+            // 
+            this.btnStart.Location = new System.Drawing.Point(6, 19);
+            this.btnStart.Name = "btnStart";
+            this.btnStart.Size = new System.Drawing.Size(75, 23);
+            this.btnStart.TabIndex = 0;
+            this.btnStart.Text = "Start Clock";
+            this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // roundClock
             // 
@@ -108,11 +109,23 @@
             this.roundClock.TabIndex = 1;
             this.roundClock.TicksColor = System.Drawing.Color.Black;
             // 
+            // lblDigital
+            // 
+            this.lblDigital.AutoSize = true;
+            this.lblDigital.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDigital.Location = new System.Drawing.Point(57, 206);
+            this.lblDigital.Name = "lblDigital";
+            this.lblDigital.Size = new System.Drawing.Size(293, 76);
+            this.lblDigital.TabIndex = 2;
+            this.lblDigital.Text = "00:00:00";
+            this.lblDigital.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(414, 407);
+            this.Controls.Add(this.lblDigital);
             this.Controls.Add(this.roundClock);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
@@ -120,6 +133,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -131,6 +145,7 @@
         private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.Button btnStart;
         private AnalogClockControl.AnalogClock roundClock;
+        private System.Windows.Forms.Label lblDigital;
     }
 }
 

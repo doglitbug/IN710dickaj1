@@ -18,15 +18,18 @@ namespace Clocks
             thisClock.Start();
         }
 
+        /// <summary>
+        /// Turn this clock off
+        /// </summary>
         public void Off()
         {
             thisClock.Stop();
         }
 
-        public void UpdateTimeDisplay()
-        {
-            throw new NotImplementedException();
-        }
+        /// <summary>
+        /// Do nothing as this clock auto updates
+        /// </summary>
+        public void UpdateTimeDisplay() { }
 
         public void ShowClock()
         {
