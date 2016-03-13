@@ -31,8 +31,20 @@ namespace IN710_4._1_Animal_Shelter_Solution_2014
         //=======================================================================
         public List<Critter> CritterQuery(string speciesName)
         {
-            /* YOUR CODE HERE */
-            throw new NotImplementedException();    // Remove after you write the method
+            //List of critters to return
+            List<Critter> matchingList = new List<Critter>();
+
+            //Find all the matching critters from critterList
+
+            foreach (Critter c in critterList)
+            {
+                if (c.Species.ToString() == speciesName)
+                {
+                    //Add to list to return
+                    matchingList.Add(c);
+                }
+            }
+            return matchingList;
         }
 
 
@@ -81,7 +93,7 @@ namespace IN710_4._1_Animal_Shelter_Solution_2014
             }
         }
 
-       
+
 
     }
 }
