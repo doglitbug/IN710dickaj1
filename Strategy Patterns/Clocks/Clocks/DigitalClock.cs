@@ -22,17 +22,30 @@ namespace Clocks
             //Set label used to display time
             this.clockLabel = clockLabel;
             //Create new timer to update this clock
-            aTimer = new System.Timers.Timer(2000);
+            aTimer = new System.Timers.Timer(1000);
+            //Set event to fire after set interval
             aTimer.Elapsed += OnTimedEvent;
+            //Shall we reset after firing?
             aTimer.AutoReset = true;
+            //Are we currently working?
             aTimer.Enabled = true;
         }
 
+        /// <summary>
+        /// Update the label with the current time
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="e"></param>
         private void OnTimedEvent(Object source, ElapsedEventArgs e)
         {
-            setText(DateTime.Now.ToString("HH:mm:ss tt"));
+            setText(DateTime.Now.ToString("HH:mm:ss"));
         }
 
+        /// <summary>
+        /// Sets the test of the lable in a thread safe manner
+        /// https://msdn.microsoft.com/library/ms171728%28v=vs.100%29.aspx
+        /// </summary>
+        /// <param name="text">test to place on the label</param>
         private void setText(String text)
         {
             if (this.clockLabel.InvokeRequired)
