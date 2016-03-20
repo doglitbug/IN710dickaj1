@@ -13,17 +13,17 @@ public class BusinessMachineMaker : IMachineMaker
 {
 	public virtual Component makeCPU()
 	{
-		throw new System.NotImplementedException();
+        return new CPUMidRange();
 	}
 
 	public virtual Component makeRAM()
 	{
-		throw new System.NotImplementedException();
+        return new BusinessRAM();
 	}
 
 	public virtual Component makeGFX()
 	{
-		throw new System.NotImplementedException();
+        return new GFXLowEnd();
 	}
 
 }

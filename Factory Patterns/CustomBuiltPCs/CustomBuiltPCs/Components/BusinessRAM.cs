@@ -13,6 +13,8 @@ public class BusinessRAM :  Component
 {
 	public BusinessRAM()
 	{
+        this.Description = "1000Mhz 4GB Generic";
+        this.Price = 200;
 	}
 
 }

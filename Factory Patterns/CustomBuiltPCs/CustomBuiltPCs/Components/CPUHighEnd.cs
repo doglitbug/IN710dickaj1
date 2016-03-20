@@ -12,7 +12,9 @@ using System.Text;
 public class CPUHighEnd : Component
 {
 	public CPUHighEnd()
-	{
+    {
+        this.Description = "Intel Core i7 4.0 Ghz";
+        this.Price = 500;
 	}
 
 }

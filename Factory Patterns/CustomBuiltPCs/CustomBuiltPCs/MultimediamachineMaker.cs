@@ -13,17 +13,17 @@ public class MultimediamachineMaker : IMachineMaker
 {
 	public virtual Component makeCPU()
 	{
-		throw new System.NotImplementedException();
+        return new CPUHighEnd();
 	}
 
 	public virtual Component makeRAM()
 	{
-		throw new System.NotImplementedException();
+        return new MultimediaRAM();
 	}
 
 	public virtual Component makeGFX()
 	{
-		throw new System.NotImplementedException();
+        return new GFXHighEnd();
 	}
 
 }

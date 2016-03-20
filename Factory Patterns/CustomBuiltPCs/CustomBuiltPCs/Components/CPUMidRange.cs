@@ -12,7 +12,9 @@ using System.Text;
 public class CPUMidRange : Component
 {
 	public CPUMidRange()
-	{
+    {
+        this.Description = "AMD A4 2.0Ghz";
+        this.Price = 180;
 	}
 
 }

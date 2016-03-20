@@ -12,7 +12,9 @@ using System.Text;
 public class GFXLowEnd : Component
 {
 	public GFXLowEnd()
-	{
+    {
+        this.Description = "Intel 4000 HD";
+        this.Price = 150;
 	}
 
 }

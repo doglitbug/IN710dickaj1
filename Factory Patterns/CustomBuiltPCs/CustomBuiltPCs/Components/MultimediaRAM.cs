@@ -13,6 +13,9 @@ public class MultimediaRAM : Component
 {
 	public MultimediaRAM()
 	{
+
+        this.Description = "1333Mhz 16GB AData";
+        this.Price = 800;
 	}
 
 }

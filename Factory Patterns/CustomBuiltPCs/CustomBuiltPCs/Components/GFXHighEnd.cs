@@ -12,7 +12,9 @@ using System.Text;
 public class GFXHighEnd : Component
 {
 	public GFXHighEnd()
-	{
+    {
+        this.Description = "Titan FX";
+        this.Price = 800;
 	}
 
 }
