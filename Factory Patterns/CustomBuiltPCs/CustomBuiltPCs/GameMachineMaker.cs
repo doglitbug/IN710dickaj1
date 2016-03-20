@@ -9,10 +9,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-public class BusinessRAM : RAM, Component
+public class GameMachineMaker : IMachineMaker
 {
-	public BusinessRAM()
+	public virtual Component makeCPU()
 	{
+        return new CPUHighEnd();
+	}
+
+	public virtual Component makeRAM()
+	{
+        return new GameRAM();
+	}
+
+	public virtual Component makeGFX()
+	{
+        return new GFXHighEnd();
 	}
 
 }

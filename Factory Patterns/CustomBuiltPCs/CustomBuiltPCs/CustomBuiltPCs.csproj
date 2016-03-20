@@ -44,12 +44,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessMachineMaker.cs" />
+    <Compile Include="Components\BusinessRAM.cs" />
+    <Compile Include="Component.cs" />
+    <Compile Include="Components\CPUHighEnd.cs" />
+    <Compile Include="Components\CPUMidRange.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="GameMachineMaker.cs" />
+    <Compile Include="Components\GameRAM.cs" />
+    <Compile Include="Components\GFXHighEnd.cs" />
+    <Compile Include="Components\GFXLowEnd.cs" />
+    <Compile Include="IMachineMaker.cs" />
+    <Compile Include="MultimediamachineMaker.cs" />
+    <Compile Include="Components\MultimediaRAM.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">

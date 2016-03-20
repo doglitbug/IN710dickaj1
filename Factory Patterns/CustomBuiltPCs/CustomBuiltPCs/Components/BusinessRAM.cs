@@ -9,21 +9,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-public class GameMachineMaker : IMachineMaker
+public class BusinessRAM :  Component
 {
-	public virtual Component makeCPU()
+	public BusinessRAM()
 	{
-		throw new System.NotImplementedException();
-	}
-
-	public virtual Component makeRAM()
-	{
-		throw new System.NotImplementedException();
-	}
-
-	public virtual Component makeGFX()
-	{
-		throw new System.NotImplementedException();
 	}
 
 }
