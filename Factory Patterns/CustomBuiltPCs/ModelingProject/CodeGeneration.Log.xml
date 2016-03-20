@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="file:///C:/PROGRAM FILES (X86)/MICROSOFT VISUAL STUDIO 12.0/COMMON7/IDE/EXTENSIONS/MICROSOFT/ARCHITECTURE TOOLS/EXTENSIBILITY/Logging/CodeGenLog.xslt"?>
+<Log xmlns="http://schemas.microsoft.com/VisualStudio/2010/CodeGen.RE.Log" Label="Code Generation/Text Transformation Log">
+  <MessageClass Name="Message" Label="Message" Option="Show informational messages" />
+  <MessageClass Name="Warning" Label="Warning" Option="Show warnings" />
+  <MessageClass Name="Error" Label="Error" Option="Show errors" />
+  <MessageClass Name="Property" Label="Property" Option="Show metadata" />
+  <MessageClass Name="Diagnostic" Label="Message" Option="Show diagnostic messages" />
+  <Message Timestamp="2016-03-20T12:59:55" Importance="High" Text="Code generation or text transformation started." />
+  <Message Timestamp="2016-03-20T12:59:55" Importance="Diagnostic" Text="Name = ClassTemplate" />
+  <Message Timestamp="2016-03-20T12:59:55" Importance="Diagnostic" Text="Overwrite = True" />
+  <Message Timestamp="2016-03-20T12:59:55" Importance="Diagnostic" Text="ProjectPath = ..\ModelingProjectLib\ModelingProjectLib.csproj" />
+  <Message Timestamp="2016-03-20T12:59:55" Importance="Diagnostic" Text="TargetDirectory = GeneratedCode\{PackageStructure}" />
+  <Message Timestamp="2016-03-20T12:59:55" Importance="Diagnostic" Text="TargetName = {Name}" />
+  <Message Timestamp="2016-03-20T12:59:55" Importance="Diagnostic" Text="TemplateFilePath = C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 12.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\ClassTemplate.t4" />
+  <Message Timestamp="2016-03-20T12:59:55" Importance="Diagnostic" Text="ResolvedTemplateFilePath = C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 12.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\ClassTemplate.t4" />
+  <Message Timestamp="2016-03-20T12:59:55" Importance="Medium" Text="ModelingProject's Text Template Binding: 'ClassTemplate' will apply ClassTemplate.t4 to: 'ModelingProject::GameMachineMaker' -  (Class), 'ModelingProject::BusinessMachineMaker' -  (Class), 'ModelingProject::MultimediamachineMaker' -  (Class), 'ModelingProject::Component' -  (Class), 'ModelingProject::GameRAM' -  (Class), 'ModelingProject::BusinessRAM' -  (Class), 'ModelingProject::MultimediaRAM' -  (Class), 'ModelingProject::GFXHighEnd' -  (Class), 'ModelingProject::GFXLowEnd' -  (Class), 'ModelingProject::CPUHighEnd' -  (Class), 'ModelingProject::CPUMidRange' -  (Class) " />
+  <Message Timestamp="2016-03-20T12:59:56" Importance="Medium" Text="'ModelingProject::GameMachineMaker' -  (Class) : success (file created) - C:\Users\Arron\Documents\GitHub\IN710dickaj1\Factory Patterns\CustomBuiltPCs\ModelingProjectLib\GeneratedCode\GameMachineMaker.cs" />
+  <Message Timestamp="2016-03-20T12:59:56" Importance="Medium" Text="'ModelingProject::BusinessMachineMaker' -  (Class) : success (file created) - C:\Users\Arron\Documents\GitHub\IN710dickaj1\Factory Patterns\CustomBuiltPCs\ModelingProjectLib\GeneratedCode\BusinessMachineMaker.cs" />
+  <Message Timestamp="2016-03-20T12:59:56" Importance="Medium" Text="'ModelingProject::MultimediamachineMaker' -  (Class) : success (file created) - C:\Users\Arron\Documents\GitHub\IN710dickaj1\Factory Patterns\CustomBuiltPCs\ModelingProjectLib\GeneratedCode\MultimediamachineMaker.cs" />
+  <Message Timestamp="2016-03-20T12:59:57" Importance="Medium" Text="'ModelingProject::Component' -  (Class) : success (file created) - C:\Users\Arron\Documents\GitHub\IN710dickaj1\Factory Patterns\CustomBuiltPCs\ModelingProjectLib\GeneratedCode\Component.cs" />
+  <Message Timestamp="2016-03-20T12:59:57" Importance="Medium" Text="'ModelingProject::GameRAM' -  (Class) : success (file created) - C:\Users\Arron\Documents\GitHub\IN710dickaj1\Factory Patterns\CustomBuiltPCs\ModelingProjectLib\GeneratedCode\GameRAM.cs" />
+  <Message Timestamp="2016-03-20T12:59:58" Importance="Medium" Text="'ModelingProject::BusinessRAM' -  (Class) : success (file created) - C:\Users\Arron\Documents\GitHub\IN710dickaj1\Factory Patterns\CustomBuiltPCs\ModelingProjectLib\GeneratedCode\BusinessRAM.cs" />
+  <Message Timestamp="2016-03-20T12:59:58" Importance="Medium" Text="'ModelingProject::MultimediaRAM' -  (Class) : success (file created) - C:\Users\Arron\Documents\GitHub\IN710dickaj1\Factory Patterns\CustomBuiltPCs\ModelingProjectLib\GeneratedCode\MultimediaRAM.cs" />
+  <Message Timestamp="2016-03-20T12:59:58" Importance="Medium" Text="'ModelingProject::GFXHighEnd' -  (Class) : success (file created) - C:\Users\Arron\Documents\GitHub\IN710dickaj1\Factory Patterns\CustomBuiltPCs\ModelingProjectLib\GeneratedCode\GFXHighEnd.cs" />
+  <Message Timestamp="2016-03-20T12:59:59" Importance="Medium" Text="'ModelingProject::GFXLowEnd' -  (Class) : success (file created) - C:\Users\Arron\Documents\GitHub\IN710dickaj1\Factory Patterns\CustomBuiltPCs\ModelingProjectLib\GeneratedCode\GFXLowEnd.cs" />
+  <Message Timestamp="2016-03-20T12:59:59" Importance="Medium" Text="'ModelingProject::CPUHighEnd' -  (Class) : success (file created) - C:\Users\Arron\Documents\GitHub\IN710dickaj1\Factory Patterns\CustomBuiltPCs\ModelingProjectLib\GeneratedCode\CPUHighEnd.cs" />
+  <Message Timestamp="2016-03-20T12:59:59" Importance="Medium" Text="'ModelingProject::CPUMidRange' -  (Class) : success (file created) - C:\Users\Arron\Documents\GitHub\IN710dickaj1\Factory Patterns\CustomBuiltPCs\ModelingProjectLib\GeneratedCode\CPUMidRange.cs" />
+  <Message Timestamp="2016-03-20T12:59:59" Importance="Diagnostic" Text="Name = InterfaceTemplate" />
+  <Message Timestamp="2016-03-20T12:59:59" Importance="Diagnostic" Text="Overwrite = True" />
+  <Message Timestamp="2016-03-20T12:59:59" Importance="Diagnostic" Text="ProjectPath = ..\ModelingProjectLib\ModelingProjectLib.csproj" />
+  <Message Timestamp="2016-03-20T12:59:59" Importance="Diagnostic" Text="TargetDirectory = GeneratedCode\{PackageStructure}" />
+  <Message Timestamp="2016-03-20T12:59:59" Importance="Diagnostic" Text="TargetName = {Name}" />
+  <Message Timestamp="2016-03-20T12:59:59" Importance="Diagnostic" Text="TemplateFilePath = C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 12.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\InterfaceTemplate.t4" />
+  <Message Timestamp="2016-03-20T12:59:59" Importance="Diagnostic" Text="ResolvedTemplateFilePath = C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 12.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\InterfaceTemplate.t4" />
+  <Message Timestamp="2016-03-20T12:59:59" Importance="Medium" Text="ModelingProject's Text Template Binding: 'InterfaceTemplate' will apply InterfaceTemplate.t4 to: 'ModelingProject::IMachineMaker' -  (Interface) " />
+  <Message Timestamp="2016-03-20T12:59:59" Importance="Medium" Text="'ModelingProject::IMachineMaker' -  (Interface) : success (file created) - C:\Users\Arron\Documents\GitHub\IN710dickaj1\Factory Patterns\CustomBuiltPCs\ModelingProjectLib\GeneratedCode\IMachineMaker.cs" />
+  <Message Timestamp="2016-03-20T12:59:59" Importance="Diagnostic" Text="Name = StructTemplate" />
+  <Message Timestamp="2016-03-20T12:59:59" Importance="Diagnostic" Text="Overwrite = True" />
+  <Message Timestamp="2016-03-20T12:59:59" Importance="Diagnostic" Text="ProjectPath = ..\ModelingProjectLib\ModelingProjectLib.csproj" />
+  <Message Timestamp="2016-03-20T12:59:59" Importance="Diagnostic" Text="TargetDirectory = GeneratedCode\{PackageStructure}" />
+  <Message Timestamp="2016-03-20T12:59:59" Importance="Diagnostic" Text="TargetName = {Name}" />
+  <Message Timestamp="2016-03-20T12:59:59" Importance="Diagnostic" Text="TemplateFilePath = C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 12.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\StructTemplate.t4" />
+  <Message Timestamp="2016-03-20T12:59:59" Importance="Diagnostic" Text="ResolvedTemplateFilePath = C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 12.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\StructTemplate.t4" />
+  <Message Timestamp="2016-03-20T12:59:59" Importance="Medium" Text="ModelingProject's Text Template Binding: 'StructTemplate' will apply StructTemplate.t4 to: 'ModelingProject::GameMachineMaker' -  (Class), 'ModelingProject::BusinessMachineMaker' -  (Class), 'ModelingProject::MultimediamachineMaker' -  (Class), 'ModelingProject::Component' -  (Class), 'ModelingProject::GameRAM' -  (Class), 'ModelingProject::BusinessRAM' -  (Class), 'ModelingProject::MultimediaRAM' -  (Class), 'ModelingProject::GFXHighEnd' -  (Class), 'ModelingProject::GFXLowEnd' -  (Class), 'ModelingProject::CPUHighEnd' -  (Class), 'ModelingProject::CPUMidRange' -  (Class) " />
+  <Message Timestamp="2016-03-20T12:59:59" Importance="Diagnostic" Text="'ModelingProject::GameMachineMaker' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2016-03-20T12:59:59" Importance="Diagnostic" Text="'ModelingProject::BusinessMachineMaker' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2016-03-20T12:59:59" Importance="Diagnostic" Text="'ModelingProject::MultimediamachineMaker' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2016-03-20T13:00:00" Importance="Diagnostic" Text="'ModelingProject::Component' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2016-03-20T13:00:00" Importance="Diagnostic" Text="'ModelingProject::GameRAM' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2016-03-20T13:00:00" Importance="Diagnostic" Text="'ModelingProject::BusinessRAM' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2016-03-20T13:00:00" Importance="Diagnostic" Text="'ModelingProject::MultimediaRAM' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2016-03-20T13:00:00" Importance="Diagnostic" Text="'ModelingProject::GFXHighEnd' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2016-03-20T13:00:00" Importance="Diagnostic" Text="'ModelingProject::GFXLowEnd' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2016-03-20T13:00:00" Importance="Diagnostic" Text="'ModelingProject::CPUHighEnd' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2016-03-20T13:00:00" Importance="Diagnostic" Text="'ModelingProject::CPUMidRange' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2016-03-20T13:00:00" Importance="Diagnostic" Text="The selection included 10 elements which were not bound to a template." />
+  <Message Timestamp="2016-03-20T13:00:00" Importance="Diagnostic" Text="'ModelingProject::' -  (InterfaceRealization): no bound template." />
+  <Message Timestamp="2016-03-20T13:00:00" Importance="Diagnostic" Text="'ModelingProject::' -  (InterfaceRealization): no bound template." />
+  <Message Timestamp="2016-03-20T13:00:00" Importance="Diagnostic" Text="'ModelingProject::' -  (InterfaceRealization): no bound template." />
+  <Message Timestamp="2016-03-20T13:00:00" Importance="Diagnostic" Text="'b30738e6-0228-4c31-b87c-981205da6e98' -  (Generalization): no bound template." />
+  <Message Timestamp="2016-03-20T13:00:00" Importance="Diagnostic" Text="'e42f2953-57b0-48c5-9b7a-9516b29d4cde' -  (Generalization): no bound template." />
+  <Message Timestamp="2016-03-20T13:00:00" Importance="Diagnostic" Text="'10a6be2f-18f7-472f-b1bf-fba9b0da056c' -  (Generalization): no bound template." />
+  <Message Timestamp="2016-03-20T13:00:00" Importance="Diagnostic" Text="'df569d19-5451-4e9a-aadd-33cfa7b91cb6' -  (Generalization): no bound template." />
+  <Message Timestamp="2016-03-20T13:00:00" Importance="Diagnostic" Text="'cd9b8822-8e9b-44e1-8721-8c82081acb16' -  (Generalization): no bound template." />
+  <Message Timestamp="2016-03-20T13:00:00" Importance="Diagnostic" Text="'36dd7786-e2ff-4a6d-ab8b-5644fd555c02' -  (Generalization): no bound template." />
+  <Message Timestamp="2016-03-20T13:00:00" Importance="Diagnostic" Text="'af6ac8d2-28aa-4242-883d-3384c537b916' -  (Generalization): no bound template." />
+  <Message Timestamp="2016-03-20T13:00:00" Importance="High" Text="Code generation complete. Errors: 0. Warnings: 0." />
+</Log>
