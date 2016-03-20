@@ -60,6 +60,7 @@
     <Compile Include="Components\GFXHighEnd.cs" />
     <Compile Include="Components\GFXLowEnd.cs" />
     <Compile Include="IMachineMaker.cs" />
+    <Compile Include="MachineSpecPrinter.cs" />
     <Compile Include="MultimediaMachineMaker.cs" />
     <Compile Include="Components\MultimediaRAM.cs" />
     <Compile Include="Program.cs" />

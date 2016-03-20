@@ -11,22 +11,20 @@ using System.Text;
 
 public class Component
 {
-	protected virtual int Price
+	public virtual double Price
 	{
 		get;
 		set;
 	}
 
-	protected virtual string Description
+	public virtual string Description
 	{
 		get;
 		set;
 	}
 
-	public static string toString()
+	public string ToString()
 	{
-		throw new System.NotImplementedException();
+        return "$" + Price + "\t" + Description;
 	}
-
 }
-

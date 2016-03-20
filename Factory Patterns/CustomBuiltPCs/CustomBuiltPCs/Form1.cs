@@ -41,7 +41,7 @@ namespace CustomBuiltPCs
             //Adding a new machine type will require changes to this form
             //Adding new components requires changes to the makers that use it only
             MachineSpecPrinter currentSpecPrinter = new MachineSpecPrinter(currentMachine, listBoxDisplay);
-            currentSpecPrinter.printSpec();
+            currentSpecPrinter.PrintSpec();
         }
     }
 }
