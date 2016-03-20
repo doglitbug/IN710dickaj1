@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="file:///C:/PROGRAM FILES (X86)/MICROSOFT VISUAL STUDIO 12.0/COMMON7/IDE/EXTENSIONS/MICROSOFT/ARCHITECTURE TOOLS/EXTENSIBILITY/Logging/ReverseEngineeringLog.xslt"?>
+<Log xmlns="http://schemas.microsoft.com/VisualStudio/2010/CodeGen.RE.Log" Label="Code Generation/Text Transformation Log">
+  <MessageClass Name="Message" Label="Message" Option="Show informational messages" />
+  <MessageClass Name="Warning" Label="Warning" Option="Show warnings" />
+  <MessageClass Name="Error" Label="Error" Option="Show errors" />
+  <MessageClass Name="Property" Label="Property" Option="Show metadata" />
+  <MessageClass Name="Diagnostic" Label="Message" Option="Show diagnostic messages" />
+  <Message Timestamp="2016-03-20T14:23:25" Importance="High" Text="Reverse Engineering Started." />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject1' -  (ModelStoreModel)" />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject1::Component' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject1::CustomBuiltPCs' -  (Package)" />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Medium" Text="Element reverse engineered into the UML model: 'ModelingProject1::CustomBuiltPCs::BusinessMachineMaker' -  (Class)" />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject1::CustomBuiltPCs::BusinessMachineMaker::BusinessMachineMaker' -  (Operation)" />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject1::CustomBuiltPCs::BusinessMachineMaker::makeCPU' -  (Operation)" />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject1::CustomBuiltPCs::BusinessMachineMaker::makeGFX' -  (Operation)" />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject1::CustomBuiltPCs::BusinessMachineMaker::makeRAM' -  (Operation)" />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Medium" Text="Element reverse engineered into the UML model: 'ModelingProject1::CustomBuiltPCs::BusinessRAM' -  (Class)" />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject1::CustomBuiltPCs::BusinessRAM::BusinessRAM' -  (Operation)" />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Medium" Text="Element reverse engineered into the UML model: 'ModelingProject1::CustomBuiltPCs::CPU' -  (Class)" />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject1::CustomBuiltPCs::CPU::CPU' -  (Operation)" />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Medium" Text="Element reverse engineered into the UML model: 'ModelingProject1::CustomBuiltPCs::CPUHighEnd' -  (Class)" />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject1::CustomBuiltPCs::CPUHighEnd::CPUHighEnd' -  (Operation)" />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Medium" Text="Element reverse engineered into the UML model: 'ModelingProject1::CustomBuiltPCs::CPUMidRange' -  (Class)" />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject1::CustomBuiltPCs::CPUMidRange::CPUMidRange' -  (Operation)" />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Medium" Text="Element reverse engineered into the UML model: 'ModelingProject1::CustomBuiltPCs::GameMachineMaker' -  (Class)" />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject1::CustomBuiltPCs::GameMachineMaker::GameMachineMaker' -  (Operation)" />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject1::CustomBuiltPCs::GameMachineMaker::makeCPU' -  (Operation)" />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject1::CustomBuiltPCs::GameMachineMaker::makeGFX' -  (Operation)" />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject1::CustomBuiltPCs::GameMachineMaker::makeRAM' -  (Operation)" />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Medium" Text="Element reverse engineered into the UML model: 'ModelingProject1::CustomBuiltPCs::GameRAM' -  (Class)" />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject1::CustomBuiltPCs::GameRAM::GameRAM' -  (Operation)" />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Medium" Text="Element reverse engineered into the UML model: 'ModelingProject1::CustomBuiltPCs::GFX' -  (Class)" />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject1::CustomBuiltPCs::GFX::GFX' -  (Operation)" />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Medium" Text="Element reverse engineered into the UML model: 'ModelingProject1::CustomBuiltPCs::GFXHighEnd' -  (Class)" />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject1::CustomBuiltPCs::GFXHighEnd::GFXHighEnd' -  (Operation)" />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Medium" Text="Element reverse engineered into the UML model: 'ModelingProject1::CustomBuiltPCs::GFXLowEnd' -  (Class)" />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject1::CustomBuiltPCs::GFXLowEnd::GFXLowEnd' -  (Operation)" />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Medium" Text="Element reverse engineered into the UML model: 'ModelingProject1::CustomBuiltPCs::IMachineMaker' -  (Interface)" />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject1::CustomBuiltPCs::IMachineMaker::makeCPU' -  (Operation)" />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject1::CustomBuiltPCs::IMachineMaker::makeGFX' -  (Operation)" />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject1::CustomBuiltPCs::IMachineMaker::makeRAM' -  (Operation)" />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Medium" Text="Element reverse engineered into the UML model: 'ModelingProject1::CustomBuiltPCs::MachineSpecPrinter' -  (Class)" />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject1::CustomBuiltPCs::MachineSpecPrinter::displayBox' -  (Property)" />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject1::CustomBuiltPCs::MachineSpecPrinter::machineMaker' -  (Property)" />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject1::CustomBuiltPCs::MachineSpecPrinter::MachineSpecPrinter' -  (Operation)" />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject1::CustomBuiltPCs::MachineSpecPrinter::MachineSpecPrinter::displayBox' -  (Parameter)" />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject1::CustomBuiltPCs::MachineSpecPrinter::MachineSpecPrinter::machineMaker' -  (Parameter)" />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject1::CustomBuiltPCs::MachineSpecPrinter::PrintSpec' -  (Operation)" />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Medium" Text="Element reverse engineered into the UML model: 'ModelingProject1::CustomBuiltPCs::MultimediaMachineMaker' -  (Class)" />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject1::CustomBuiltPCs::MultimediaMachineMaker::makeCPU' -  (Operation)" />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject1::CustomBuiltPCs::MultimediaMachineMaker::makeGFX' -  (Operation)" />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject1::CustomBuiltPCs::MultimediaMachineMaker::makeRAM' -  (Operation)" />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject1::CustomBuiltPCs::MultimediaMachineMaker::MultimediaMachineMaker' -  (Operation)" />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Medium" Text="Element reverse engineered into the UML model: 'ModelingProject1::CustomBuiltPCs::MultimediaRAM' -  (Class)" />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject1::CustomBuiltPCs::MultimediaRAM::MultimediaRAM' -  (Operation)" />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Medium" Text="Element reverse engineered into the UML model: 'ModelingProject1::CustomBuiltPCs::RAM' -  (Class)" />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject1::CustomBuiltPCs::RAM::RAM' -  (Operation)" />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject1::System' -  (Package)" />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject1::System::Windows' -  (Package)" />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject1::System::Windows::Forms' -  (Package)" />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject1::System::Windows::Forms::ListBox' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: ModelingProject1::CustomBuiltPCs::CPUMidRange to ModelingProject1::CustomBuiltPCs::CPU (Generalization)" />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: ModelingProject1::CustomBuiltPCs::GameMachineMaker to ModelingProject1::CustomBuiltPCs::IMachineMaker (InterfaceRealization)" />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: ModelingProject1::CustomBuiltPCs::GameRAM to ModelingProject1::CustomBuiltPCs::RAM (Generalization)" />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: ModelingProject1::CustomBuiltPCs::GFX to ModelingProject1::Component (Generalization)" />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: ModelingProject1::CustomBuiltPCs::GFXHighEnd to ModelingProject1::CustomBuiltPCs::GFX (Generalization)" />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: ModelingProject1::CustomBuiltPCs::GFXLowEnd to ModelingProject1::CustomBuiltPCs::GFX (Generalization)" />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: ModelingProject1::CustomBuiltPCs::MultimediaMachineMaker to ModelingProject1::CustomBuiltPCs::IMachineMaker (InterfaceRealization)" />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: ModelingProject1::CustomBuiltPCs::MultimediaRAM to ModelingProject1::CustomBuiltPCs::RAM (Generalization)" />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: ModelingProject1::CustomBuiltPCs::RAM to ModelingProject1::Component (Generalization)" />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: ModelingProject1::CustomBuiltPCs::BusinessMachineMaker to ModelingProject1::CustomBuiltPCs::IMachineMaker (InterfaceRealization)" />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: ModelingProject1::CustomBuiltPCs::BusinessRAM to ModelingProject1::CustomBuiltPCs::RAM (Generalization)" />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: ModelingProject1::CustomBuiltPCs::CPU to ModelingProject1::Component (Generalization)" />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: ModelingProject1::CustomBuiltPCs::CPUHighEnd to ModelingProject1::CustomBuiltPCs::CPU (Generalization)" />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="High" Text="(15) type(s) fully reverse engineered." />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="High" Text="(2) type(s) partially reverse engineered.  These types were not included in the original selection so their full definitions are not reverse engineered.  Instead, this shallow operation has simply ensured these types exist in the UML model because they are needed in order to fully describe other elements." />
+  <Message Timestamp="2016-03-20T14:23:28" Importance="High" Text="The reverse engineering operation completed with (0) error(s), and (0) warning(s)." />
+</Log>
