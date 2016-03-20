@@ -31,9 +31,13 @@ namespace CustomBuiltPCs
             {
                 currentMachine = new BusinessMachineMaker();
             }
-            else
+            else if (rbMultimedia.Checked)
             {
                 currentMachine = new MultimediaMachineMaker();
+            }
+            else
+            {
+                currentMachine = new BudgetMachineMaker();
             }
             //TODO Add new machine types in here when adding radiobuttons
 

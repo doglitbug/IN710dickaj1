@@ -30,10 +30,11 @@
         {
             this.btnPrintSpec = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rbGame = new System.Windows.Forms.RadioButton();
-            this.rbBusiness = new System.Windows.Forms.RadioButton();
             this.rbMultimedia = new System.Windows.Forms.RadioButton();
+            this.rbBusiness = new System.Windows.Forms.RadioButton();
+            this.rbGame = new System.Windows.Forms.RadioButton();
             this.listBoxDisplay = new System.Windows.Forms.ListBox();
+            this.rbBudget = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,6 +50,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.rbBudget);
             this.groupBox1.Controls.Add(this.rbMultimedia);
             this.groupBox1.Controls.Add(this.rbBusiness);
             this.groupBox1.Controls.Add(this.rbGame);
@@ -58,28 +60,6 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Machine type";
-            // 
-            // rbGame
-            // 
-            this.rbGame.AutoSize = true;
-            this.rbGame.Location = new System.Drawing.Point(7, 20);
-            this.rbGame.Name = "rbGame";
-            this.rbGame.Size = new System.Drawing.Size(53, 17);
-            this.rbGame.TabIndex = 0;
-            this.rbGame.TabStop = true;
-            this.rbGame.Text = "Game";
-            this.rbGame.UseVisualStyleBackColor = true;
-            // 
-            // rbBusiness
-            // 
-            this.rbBusiness.AutoSize = true;
-            this.rbBusiness.Location = new System.Drawing.Point(7, 44);
-            this.rbBusiness.Name = "rbBusiness";
-            this.rbBusiness.Size = new System.Drawing.Size(67, 17);
-            this.rbBusiness.TabIndex = 1;
-            this.rbBusiness.TabStop = true;
-            this.rbBusiness.Text = "Business";
-            this.rbBusiness.UseVisualStyleBackColor = true;
             // 
             // rbMultimedia
             // 
@@ -92,6 +72,28 @@
             this.rbMultimedia.Text = "Multimedia";
             this.rbMultimedia.UseVisualStyleBackColor = true;
             // 
+            // rbBusiness
+            // 
+            this.rbBusiness.AutoSize = true;
+            this.rbBusiness.Location = new System.Drawing.Point(7, 44);
+            this.rbBusiness.Name = "rbBusiness";
+            this.rbBusiness.Size = new System.Drawing.Size(67, 17);
+            this.rbBusiness.TabIndex = 1;
+            this.rbBusiness.TabStop = true;
+            this.rbBusiness.Text = "Business";
+            this.rbBusiness.UseVisualStyleBackColor = true;
+            // 
+            // rbGame
+            // 
+            this.rbGame.AutoSize = true;
+            this.rbGame.Location = new System.Drawing.Point(7, 20);
+            this.rbGame.Name = "rbGame";
+            this.rbGame.Size = new System.Drawing.Size(53, 17);
+            this.rbGame.TabIndex = 0;
+            this.rbGame.TabStop = true;
+            this.rbGame.Text = "Game";
+            this.rbGame.UseVisualStyleBackColor = true;
+            // 
             // listBoxDisplay
             // 
             this.listBoxDisplay.FormattingEnabled = true;
@@ -99,6 +101,17 @@
             this.listBoxDisplay.Name = "listBoxDisplay";
             this.listBoxDisplay.Size = new System.Drawing.Size(455, 160);
             this.listBoxDisplay.TabIndex = 2;
+            // 
+            // rbBudget
+            // 
+            this.rbBudget.AutoSize = true;
+            this.rbBudget.Location = new System.Drawing.Point(7, 92);
+            this.rbBudget.Name = "rbBudget";
+            this.rbBudget.Size = new System.Drawing.Size(59, 17);
+            this.rbBudget.TabIndex = 3;
+            this.rbBudget.TabStop = true;
+            this.rbBudget.Text = "Budget";
+            this.rbBudget.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -124,6 +137,7 @@
         private System.Windows.Forms.RadioButton rbBusiness;
         private System.Windows.Forms.RadioButton rbGame;
         private System.Windows.Forms.ListBox listBoxDisplay;
+        private System.Windows.Forms.RadioButton rbBudget;
     }
 }
 
