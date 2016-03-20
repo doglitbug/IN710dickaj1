@@ -23,7 +23,7 @@ public class Component
 		set;
 	}
 
-	public string ToString()
+	public override string ToString()
 	{
         return "$" + Price + "\t" + Description;
 	}

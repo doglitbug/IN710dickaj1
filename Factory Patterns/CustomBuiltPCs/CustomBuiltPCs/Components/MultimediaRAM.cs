@@ -9,14 +9,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-public class MultimediaRAM : Component
+namespace CustomBuiltPCs
 {
-	public MultimediaRAM()
-	{
+    public class MultimediaRAM : RAM
+    {
+        public MultimediaRAM()
+        {
 
-        this.Description = "1333Mhz 16GB AData";
-        this.Price = 800;
-	}
+            this.Description = "1333Mhz 16GB AData";
+            this.Price = 800;
+        }
+
+    }
 
 }
-

@@ -8,14 +8,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
-public class CPUHighEnd : Component
-{
-	public CPUHighEnd()
+namespace CustomBuiltPCs {
+    public class CPUHighEnd : CPU
     {
-        this.Description = "Intel Core i7 4.0 Ghz";
-        this.Price = 500;
-	}
-
+        public CPUHighEnd()
+        {
+            this.Description = "Intel Core i7 4.0 Ghz";
+            this.Price = 500;
+        }
+    }
 }
 

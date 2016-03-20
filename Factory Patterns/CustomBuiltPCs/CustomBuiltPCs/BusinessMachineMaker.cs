@@ -8,23 +8,28 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
-public class BusinessMachineMaker : IMachineMaker
+namespace CustomBuiltPCs
 {
-	public virtual Component makeCPU()
-	{
-        return new CPUMidRange();
-	}
+    /// <summary>
+    /// Make a new Business class computer
+    /// </summary>
+    public class BusinessMachineMaker : IMachineMaker
+    {
+        public virtual CPU makeCPU()
+        {
+            return new CPUMidRange();
+        }
 
-	public virtual Component makeRAM()
-	{
-        return new BusinessRAM();
-	}
+        public virtual RAM makeRAM()
+        {
+            return new BusinessRAM();
+        }
 
-	public virtual Component makeGFX()
-	{
-        return new GFXLowEnd();
-	}
+        public virtual GFX makeGFX()
+        {
+            return new GFXLowEnd();
+        }
 
+    }
 }
 

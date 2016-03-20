@@ -9,13 +9,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-public class GFXLowEnd : Component
+namespace CustomBuiltPCs
 {
-	public GFXLowEnd()
+    public class GFXLowEnd : GFX
     {
-        this.Description = "Intel 4000 HD";
-        this.Price = 150;
-	}
+        public GFXLowEnd()
+        {
+            this.Description = "Intel 4000 HD";
+            this.Price = 150;
+        }
+
+    }
 
 }
-

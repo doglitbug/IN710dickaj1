@@ -8,14 +8,28 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
-public interface IMachineMaker 
+namespace CustomBuiltPCs
 {
-	Component makeCPU();
-
-	Component makeRAM();
-
-	Component makeGFX();
-
+    /// <summary>
+    /// interface for computer maker
+    /// </summary>
+    public interface IMachineMaker
+    {
+        /// <summary>
+        /// Make a new CPU for this machine
+        /// </summary>
+        /// <returns>CPU chosen from avaliable types</returns>
+        CPU makeCPU();
+        /// <summary>
+        /// Make new RAM for this machine
+        /// </summary>
+        /// <returns>RAM chosen from avaliable types</returns>
+        RAM makeRAM();
+        /// <summary>
+        /// Make a new graphic card for this machine
+        /// </summary>
+        /// <returns>RAM chosen from avaliable types</returns>
+        GFX makeGFX();
+    }
 }
 

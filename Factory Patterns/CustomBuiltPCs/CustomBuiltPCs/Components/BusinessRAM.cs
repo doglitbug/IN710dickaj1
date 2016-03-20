@@ -9,7 +9,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-public class BusinessRAM :  Component
+namespace CustomBuiltPCs { 
+public class BusinessRAM :  RAM
 {
 	public BusinessRAM()
 	{
@@ -19,3 +20,4 @@ public class BusinessRAM :  Component
 
 }
 
+}

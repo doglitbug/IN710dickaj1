@@ -8,23 +8,28 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
-public class MultimediaMachineMaker : IMachineMaker
+namespace CustomBuiltPCs
 {
-	public virtual Component makeCPU()
-	{
-        return new CPUHighEnd();
-	}
+    /// <summary>
+    /// Make a multimedia computer
+    /// </summary>
+    public class MultimediaMachineMaker : IMachineMaker
+    {
+        public virtual CPU makeCPU()
+        {
+            return new CPUHighEnd();
+        }
 
-	public virtual Component makeRAM()
-	{
-        return new MultimediaRAM();
-	}
+        public virtual RAM makeRAM()
+        {
+            return new MultimediaRAM();
+        }
 
-	public virtual Component makeGFX()
-	{
-        return new GFXHighEnd();
-	}
+        public virtual GFX makeGFX()
+        {
+            return new GFXHighEnd();
+        }
 
+    }
 }
 

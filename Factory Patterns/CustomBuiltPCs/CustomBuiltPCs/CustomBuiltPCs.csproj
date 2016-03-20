@@ -47,8 +47,11 @@
     <Compile Include="BusinessMachineMaker.cs" />
     <Compile Include="Components\BusinessRAM.cs" />
     <Compile Include="Component.cs" />
+    <Compile Include="Components\CPU.cs" />
     <Compile Include="Components\CPUHighEnd.cs" />
     <Compile Include="Components\CPUMidRange.cs" />
+    <Compile Include="Components\GFX.cs" />
+    <Compile Include="Components\RAM.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -8,14 +8,16 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
-public class GameRAM :  Component
+namespace CustomBuiltPCs
 {
-	public GameRAM()
+    public class GameRAM : RAM
     {
-        this.Description = "2666MHz 8GB Kingston";
-        this.Price = 800;
-	}
+        public GameRAM()
+        {
+            this.Description = "2666MHz 8GB Kingston";
+            this.Price = 800;
+        }
+
+    }
 
 }
-

@@ -8,14 +8,16 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
-public class GFXHighEnd : Component
+namespace CustomBuiltPCs
 {
-	public GFXHighEnd()
+    public class GFXHighEnd : GFX
     {
-        this.Description = "Titan FX";
-        this.Price = 800;
-	}
+        public GFXHighEnd()
+        {
+            this.Description = "Titan FX";
+            this.Price = 800;
+        }
+
+    }
 
 }
-

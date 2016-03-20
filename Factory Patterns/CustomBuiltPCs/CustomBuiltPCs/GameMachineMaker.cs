@@ -8,23 +8,27 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
-public class GameMachineMaker : IMachineMaker
+namespace CustomBuiltPCs
 {
-	public virtual Component makeCPU()
-	{
-        return new CPUHighEnd();
-	}
+    /// <summary>
+    /// Make a high end gaming computer
+    /// </summary>
+    public class GameMachineMaker : IMachineMaker
+    {
+        public virtual CPU makeCPU()
+        {
+            return new CPUHighEnd();
+        }
 
-	public virtual Component makeRAM()
-	{
-        return new GameRAM();
-	}
+        public virtual RAM makeRAM()
+        {
+            return new GameRAM();
+        }
 
-	public virtual Component makeGFX()
-	{
-        return new GFXHighEnd();
-	}
+        public virtual GFX makeGFX()
+        {
+            return new GFXHighEnd();
+        }
 
+    }
 }
-

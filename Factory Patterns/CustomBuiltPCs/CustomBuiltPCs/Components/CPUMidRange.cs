@@ -9,13 +9,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-public class CPUMidRange : Component
-{
-	public CPUMidRange()
+namespace CustomBuiltPCs {
+    public class CPUMidRange : CPU
     {
-        this.Description = "AMD A4 2.0Ghz";
-        this.Price = 180;
-	}
-
+        public CPUMidRange()
+        {
+            this.Description = "AMD A4 2.0Ghz";
+            this.Price = 180;
+        }
+    }
 }
 
