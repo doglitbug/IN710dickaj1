@@ -39,6 +39,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GeneratedCode\BusinessMachineMaker.cs" />
+    <Compile Include="GeneratedCode\BusinessRAM.cs" />
+    <Compile Include="GeneratedCode\Component.cs" />
+    <Compile Include="GeneratedCode\CPUHighEnd.cs" />
+    <Compile Include="GeneratedCode\CPUMidRange.cs" />
+    <Compile Include="GeneratedCode\GameMachineMaker.cs" />
+    <Compile Include="GeneratedCode\GameRAM.cs" />
+    <Compile Include="GeneratedCode\GFXHighEnd.cs" />
+    <Compile Include="GeneratedCode\GFXLowEnd.cs" />
+    <Compile Include="GeneratedCode\IMachineMaker.cs" />
+    <Compile Include="GeneratedCode\MultimediamachineMaker.cs" />
+    <Compile Include="GeneratedCode\MultimediaRAM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

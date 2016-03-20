@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-public class GameRAM : RAM, Component
+public class GameRAM :  Component
 {
 	public GameRAM()
 	{

@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-public class MultimediaRAM : RAM, Component
+public class MultimediaRAM : Component
 {
 	public MultimediaRAM()
 	{

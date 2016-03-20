@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-public class GFXHighEnd : GFX, Component
+public class GFXHighEnd : Component
 {
 	public GFXHighEnd()
 	{

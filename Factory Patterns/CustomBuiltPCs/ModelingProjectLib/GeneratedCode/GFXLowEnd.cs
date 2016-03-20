@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-public class GFXLowEnd : GFX, Component
+public class GFXLowEnd : Component
 {
 	public GFXLowEnd()
 	{

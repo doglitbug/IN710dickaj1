@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-public class CPUMidRange : CPU, Component
+public class CPUMidRange : Component
 {
 	public CPUMidRange()
 	{
