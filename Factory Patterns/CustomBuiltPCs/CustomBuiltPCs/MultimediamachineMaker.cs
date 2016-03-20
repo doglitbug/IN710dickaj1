@@ -30,6 +30,10 @@ namespace CustomBuiltPCs
             return new GFXHighEnd();
         }
 
+        public virtual Monitor makeMonitor()
+        {
+            return new WidescreenMonitor();
+        }
     }
 }
 

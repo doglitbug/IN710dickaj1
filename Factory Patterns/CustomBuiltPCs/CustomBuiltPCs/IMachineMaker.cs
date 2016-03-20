@@ -30,6 +30,11 @@ namespace CustomBuiltPCs
         /// </summary>
         /// <returns>RAM chosen from avaliable types</returns>
         GFX makeGFX();
+        /// <summary>
+        /// Make a new monitor for this machine
+        /// </summary>
+        /// <returns>monitor from avaliable types</returns>
+        Monitor makeMonitor();
     }
 }
 

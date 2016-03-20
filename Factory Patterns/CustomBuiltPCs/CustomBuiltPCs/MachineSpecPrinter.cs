@@ -38,9 +38,10 @@ namespace CustomBuiltPCs
             CPU currentCPU = machineMaker.makeCPU();
             RAM currentRAM = machineMaker.makeRAM();
             GFX currentGFX = machineMaker.makeGFX();
+            Monitor currentMonitor =machineMaker.makeMonitor();
 
             //Calculate price
-            double totalPrice = currentCPU.Price + currentRAM.Price + currentGFX.Price;
+            double totalPrice = currentCPU.Price + currentRAM.Price + currentGFX.Price+currentMonitor.Price;
 
             //Display
             displayBox.Items.Clear();
@@ -50,6 +51,7 @@ namespace CustomBuiltPCs
             displayBox.Items.Add(currentCPU.ToString());
             displayBox.Items.Add(currentRAM.ToString());
             displayBox.Items.Add(currentGFX.ToString());
+            displayBox.Items.Add(currentMonitor.ToString());
 
             displayBox.Items.Add("------------------------------------------------");
             displayBox.Items.Add("Total price: "+totalPrice.ToString());

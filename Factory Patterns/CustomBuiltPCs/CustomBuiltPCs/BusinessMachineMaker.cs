@@ -30,6 +30,24 @@ namespace CustomBuiltPCs
             return new GFXLowEnd();
         }
 
+        public virtual Monitor makeMonitor()
+        {
+            Monitor theMonitor;
+            //Choose a monitor from the current options randomly
+            Random rnd = new Random();
+            int choose = rnd.Next(1, 3);
+            switch (choose)
+            {
+                case 1:
+                    theMonitor = new OfficeMonitor();
+                    break;
+                case 2:
+                default:
+                    theMonitor = new RecycledMonitor();
+                    break;
+            }
+            return theMonitor;
+        }
     }
 }
 
