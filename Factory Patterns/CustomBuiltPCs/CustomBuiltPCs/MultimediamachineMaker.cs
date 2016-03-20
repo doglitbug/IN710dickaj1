@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-public class MultimediamachineMaker : IMachineMaker
+public class MultimediaMachineMaker : IMachineMaker
 {
 	public virtual Component makeCPU()
 	{
