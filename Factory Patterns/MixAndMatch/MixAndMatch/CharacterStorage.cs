@@ -14,6 +14,7 @@ namespace MixAndMatch
             avaliableCharacters=new List<Character>();
             //TODO add in all characters at this point!
             avaliableCharacters.Add(new Fairy());
+            avaliableCharacters.Add(new Frankenstein());
 
         }
 

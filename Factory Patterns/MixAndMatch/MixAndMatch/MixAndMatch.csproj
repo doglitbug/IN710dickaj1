@@ -45,7 +45,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CharacterStorage.cs" />
-    <Compile Include="Fairy.cs" />
+    <Compile Include="Parts\Frankenstein.cs" />
+    <Compile Include="Parts\Fairy.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,8 +55,11 @@
     </Compile>
     <Compile Include="Character.cs" />
     <Compile Include="Parts\Body.cs" />
+    <Compile Include="Parts\Frankenstein_Body.cs" />
     <Compile Include="Parts\Fairy_Body.cs" />
+    <Compile Include="Parts\Frankenstein_Head.cs" />
     <Compile Include="Parts\Fairy_Head.cs" />
+    <Compile Include="Parts\Frankenstein_Legs.cs" />
     <Compile Include="Parts\Fairy_Legs.cs" />
     <Compile Include="Parts\Head.cs" />
     <Compile Include="Parts\Legs.cs" />
