@@ -35,5 +35,21 @@ namespace MixAndMatch
                 cbLegs.SelectedIndex = 0;
             }
         }
+
+        private void btnCreate_Click(object sender, EventArgs e)
+        {
+            //Get the named of the individual parts
+            string selectedHead = cbHead.SelectedItem.ToString();
+            string selectedBody = cbBody.SelectedItem.ToString();
+            string selectedLegs = cbLegs.SelectedItem.ToString();
+
+            //Ask storage to make a new character
+            Character newCharacter = storageEngine.createCharacterFromSelection(selectedHead, selectedBody, selectedLegs);
+            //Create an output engine
+            CharacterOutput outputEngine = new CharacterOutput(newCharacter, pbHead, pbBody, pbLegs);
+            //Ask it to do its thing
+            outputEngine.PrintCharacter();
+
+        }
     }
 }

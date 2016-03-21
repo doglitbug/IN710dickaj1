@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CharacterOutput.cs" />
     <Compile Include="CharacterStorage.cs" />
     <Compile Include="Parts\Frankenstein.cs" />
     <Compile Include="Parts\Fairy.cs" />

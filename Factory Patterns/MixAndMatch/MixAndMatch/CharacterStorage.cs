@@ -33,11 +33,28 @@ namespace MixAndMatch
         }
 
         /// <summary>
+        /// Create a new mixed up character from parts
+        /// </summary>
+        /// <param name="head">Name of the head</param>
+        /// <param name="body">Name of the body</param>
+        /// <param name="legs">Name of the legs</param>
+        /// <returns>Newly created Character</returns>
+        public Character createCharacterFromSelection(string head, string body, string legs)
+        {
+            //Set up placeholder character
+            Character newCharacter = new Character();
+            //Get the individual parts
+            newCharacter.myHead = getHeadFromSelection(head);
+            newCharacter.myBody = getBodyFromSelection(body);
+            newCharacter.myLegs = getLegsFromSelection(legs);
+            return newCharacter;
+        }
+        /// <summary>
         /// Get a head based off the characters name
         /// </summary>
         /// <param name="characterName">Name of the character</param>
         /// <returns>The characters head</returns>
-        public Head getHeadFromSelection(string characterName)
+        private Head getHeadFromSelection(string characterName)
         {
             Head selectedHead = null;
             foreach (Character c in avaliableCharacters)

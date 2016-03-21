@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MixAndMatch
 {
-    public abstract class Character
+    public class Character
     {
         //These are public so that the character can be created
         //TODO Fix accessibility?

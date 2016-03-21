@@ -134,12 +134,14 @@
             this.btnCreate.TabIndex = 2;
             this.btnCreate.Text = "Create monster";
             this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // pbHead
             // 
             this.pbHead.Location = new System.Drawing.Point(6, 19);
             this.pbHead.Name = "pbHead";
             this.pbHead.Size = new System.Drawing.Size(184, 124);
+            this.pbHead.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbHead.TabIndex = 0;
             this.pbHead.TabStop = false;
             // 
@@ -148,6 +150,7 @@
             this.pbBody.Location = new System.Drawing.Point(6, 149);
             this.pbBody.Name = "pbBody";
             this.pbBody.Size = new System.Drawing.Size(184, 124);
+            this.pbBody.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbBody.TabIndex = 1;
             this.pbBody.TabStop = false;
             // 
@@ -156,6 +159,7 @@
             this.pbLegs.Location = new System.Drawing.Point(6, 279);
             this.pbLegs.Name = "pbLegs";
             this.pbLegs.Size = new System.Drawing.Size(184, 124);
+            this.pbLegs.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbLegs.TabIndex = 2;
             this.pbLegs.TabStop = false;
             // 
