@@ -12,9 +12,14 @@ namespace MixAndMatch
         public CharacterStorage()
         {
             avaliableCharacters = new List<Character>();
-            //TODO add in all characters at this point!
+            //TODO Entry point for new characters
+            //IRL would be read form folder list in a directory
             avaliableCharacters.Add(new Fairy());
             avaliableCharacters.Add(new Frankenstein());
+            avaliableCharacters.Add(new Skeleton());
+            avaliableCharacters.Add(new Vampire());
+            avaliableCharacters.Add(new Werewolf());
+            avaliableCharacters.Add(new Witch());
 
         }
 

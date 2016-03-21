@@ -46,6 +46,22 @@
   <ItemGroup>
     <Compile Include="CharacterOutput.cs" />
     <Compile Include="CharacterStorage.cs" />
+    <Compile Include="Parts\Witch.cs" />
+    <Compile Include="Parts\Werewolf.cs" />
+    <Compile Include="Parts\Vampire.cs" />
+    <Compile Include="Parts\Witch_Body.cs" />
+    <Compile Include="Parts\Werewolf_Body.cs" />
+    <Compile Include="Parts\Vampire_Body.cs" />
+    <Compile Include="Parts\Witch_Head.cs" />
+    <Compile Include="Parts\Werewolf_Head.cs" />
+    <Compile Include="Parts\Vampire_Head.cs" />
+    <Compile Include="Parts\Witch_Legs.cs" />
+    <Compile Include="Parts\Werewolf_Legs.cs" />
+    <Compile Include="Parts\Vampire_Legs.cs" />
+    <Compile Include="Parts\Skeleton.cs" />
+    <Compile Include="Parts\Skeleton_Body.cs" />
+    <Compile Include="Parts\Skeleton_Head.cs" />
+    <Compile Include="Parts\Skeleton_Legs.cs" />
     <Compile Include="Parts\Frankenstein.cs" />
     <Compile Include="Parts\Fairy.cs" />
     <Compile Include="Form1.cs">
