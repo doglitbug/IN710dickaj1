@@ -11,6 +11,7 @@ namespace MixAndMatch
         List<Character> avaliableCharacters;
         public CharacterStorage()
         {
+            avaliableCharacters=new List<Character>();
             //TODO add in all characters at this point!
             avaliableCharacters.Add(new Fairy());
 

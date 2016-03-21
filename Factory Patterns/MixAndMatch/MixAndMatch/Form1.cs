@@ -12,16 +12,28 @@ namespace MixAndMatch
 {
     public partial class Form1 : Form
     {
+        CharacterStorage storageEngine;
         public Form1()
         {
             InitializeComponent();
-        }
+            //Set up storage
+            storageEngine = new CharacterStorage();
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Character test = new Fairy();
+            //Get a string list of the avaliable characters
+            List<string> avaliableCharacters = storageEngine.getListofCharacters();
 
-            textBoxOutput.Text = test.myBody.Name;
+            //Populate the combo boxes on the form
+            foreach (string s in avaliableCharacters)
+            {
+                //Add characters to combo box
+                cbHead.Items.Add(s);
+                cbBody.Items.Add(s);
+                cbLegs.Items.Add(s);
+                //Select first one as default
+                cbHead.SelectedIndex = 0;
+                cbBody.SelectedIndex = 0;
+                cbLegs.SelectedIndex = 0;
+            }
         }
     }
 }
