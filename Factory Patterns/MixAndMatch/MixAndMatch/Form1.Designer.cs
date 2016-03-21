@@ -77,6 +77,7 @@
             // 
             // cbHead
             // 
+            this.cbHead.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbHead.FormattingEnabled = true;
             this.cbHead.Location = new System.Drawing.Point(48, 19);
             this.cbHead.Name = "cbHead";
@@ -85,6 +86,7 @@
             // 
             // cbBody
             // 
+            this.cbBody.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbBody.FormattingEnabled = true;
             this.cbBody.Location = new System.Drawing.Point(48, 47);
             this.cbBody.Name = "cbBody";
@@ -93,6 +95,7 @@
             // 
             // cbLegs
             // 
+            this.cbLegs.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLegs.FormattingEnabled = true;
             this.cbLegs.Location = new System.Drawing.Point(48, 75);
             this.cbLegs.Name = "cbLegs";
