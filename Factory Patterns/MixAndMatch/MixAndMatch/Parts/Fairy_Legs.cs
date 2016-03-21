@@ -11,8 +11,8 @@ namespace MixAndMatch
     {
         public Fairy_Legs()
         {
-            this.Name = "Fairy's legs";
-            this.Image = new Bitmap("images/Fairy_2.png");
+            this.name = "Fairy's legs";
+            this.image = new Bitmap("images/Fairy_2.png");
         }
     }
 }

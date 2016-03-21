@@ -16,5 +16,12 @@ namespace MixAndMatch
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Character test = new Fairy();
+
+            textBoxOutput.Text = test.myBody.Name;
+        }
     }
 }

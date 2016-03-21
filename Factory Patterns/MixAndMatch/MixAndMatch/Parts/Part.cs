@@ -12,15 +12,23 @@ namespace MixAndMatch
         /// <summary>
         /// Name of this part
         /// </summary>
-        public virtual string Name { get; set; }
+        protected string name;
         /// <summary>
         /// Preview image of this part
         /// </summary>
-        public virtual Bitmap Image { get; set; }
-        
+        protected Bitmap image;
+
+        /// <summary>
+        /// Get the name of this part
+        /// </summary>
+        public string Name { get { return name; } }
+        /// <summary>
+        /// Get the preview image for this part
+        /// </summary>
+        public Bitmap Image {get { return image; }}
         public override string ToString()
         {
-            return Name;
+            return name;
         }
     }
 }
