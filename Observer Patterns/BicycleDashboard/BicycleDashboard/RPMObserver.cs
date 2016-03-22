@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace BicycleDashboard
 {
-    public interface ISubject
+    class RPMObserver:BicycleObserver
     {
-        void AddObserver(IObserver o);
-        void RemoveObserver(IObserver o);
-        void NotifyObservers();
+        public override void Update(int currentRPM)
+        {
+            currentComputedValue = currentRPM;
+        }
     }
 }
