@@ -12,6 +12,8 @@ namespace ProgressIndicator
 {
     public partial class Form1 : Form
     {
+        public delegate void trackProgress();
+
         public Form1()
         {
             InitializeComponent();
@@ -19,7 +21,18 @@ namespace ProgressIndicator
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-
+            if (rbSpinBox.Checked)
+            {
+                //TODO Do spin box
+            }
+            else if (rbProgressBar.Checked)
+            {
+                //TODO Do Progress bar
+            }
+            else
+            {
+                //TODO Do track bar
+            }
         }
     }
 }
