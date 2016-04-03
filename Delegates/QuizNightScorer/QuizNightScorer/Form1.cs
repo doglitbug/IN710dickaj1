@@ -23,12 +23,12 @@ namespace QuizNightScorer
             ScoreDelegate scoreComputer;
             if (rbAdult.Checked)
             {
-                //TODO Use adult score
+                scoreComputer = new ScoreDelegate(Scorer.AdultScore);
             }
             else
             {
                 //Must be Child selected
-                //TODO Use child scorer
+                scoreComputer = new ScoreDelegate(Scorer.ChildScore);
             }
 
             //Get the scores from the form
@@ -40,7 +40,7 @@ namespace QuizNightScorer
             int score = scoreComputer(correct, incorrect);
 
             //set score on the form
-            lblScore = score;
+            lblScore.Text = score.ToString();
         }
     }
 }

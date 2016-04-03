@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.rbAdult = new System.Windows.Forms.RadioButton();
             this.rbChild = new System.Windows.Forms.RadioButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tbCorrect = new System.Windows.Forms.TextBox();
+            this.rbAdult = new System.Windows.Forms.RadioButton();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tbIncorrect = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.tbCorrect = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnComputeScore = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.lblScore = new System.Windows.Forms.Label();
@@ -54,18 +54,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Team Type";
             // 
-            // groupBox2
+            // rbChild
             // 
-            this.groupBox2.Controls.Add(this.tbIncorrect);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.tbCorrect);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Location = new System.Drawing.Point(146, 12);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(181, 68);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Answers";
+            this.rbChild.AutoSize = true;
+            this.rbChild.Location = new System.Drawing.Point(7, 44);
+            this.rbChild.Name = "rbChild";
+            this.rbChild.Size = new System.Drawing.Size(48, 17);
+            this.rbChild.TabIndex = 1;
+            this.rbChild.Text = "Child";
+            this.rbChild.UseVisualStyleBackColor = true;
             // 
             // rbAdult
             // 
@@ -79,32 +76,18 @@
             this.rbAdult.Text = "Adult";
             this.rbAdult.UseVisualStyleBackColor = true;
             // 
-            // rbChild
+            // groupBox2
             // 
-            this.rbChild.AutoSize = true;
-            this.rbChild.Location = new System.Drawing.Point(7, 44);
-            this.rbChild.Name = "rbChild";
-            this.rbChild.Size = new System.Drawing.Size(48, 17);
-            this.rbChild.TabIndex = 1;
-            this.rbChild.Text = "Child";
-            this.rbChild.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Correct Answers:";
-            // 
-            // tbCorrect
-            // 
-            this.tbCorrect.Location = new System.Drawing.Point(113, 9);
-            this.tbCorrect.Name = "tbCorrect";
-            this.tbCorrect.Size = new System.Drawing.Size(58, 20);
-            this.tbCorrect.TabIndex = 2;
-            this.tbCorrect.Text = "0";
+            this.groupBox2.Controls.Add(this.tbIncorrect);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.tbCorrect);
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Location = new System.Drawing.Point(146, 12);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(181, 68);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Answers";
             // 
             // tbIncorrect
             // 
@@ -112,7 +95,7 @@
             this.tbIncorrect.Name = "tbIncorrect";
             this.tbIncorrect.Size = new System.Drawing.Size(58, 20);
             this.tbIncorrect.TabIndex = 4;
-            this.tbIncorrect.Text = "0";
+            this.tbIncorrect.Text = "3";
             // 
             // label2
             // 
@@ -122,6 +105,23 @@
             this.label2.Size = new System.Drawing.Size(95, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Incorrect Answers:";
+            // 
+            // tbCorrect
+            // 
+            this.tbCorrect.Location = new System.Drawing.Point(113, 9);
+            this.tbCorrect.Name = "tbCorrect";
+            this.tbCorrect.Size = new System.Drawing.Size(58, 20);
+            this.tbCorrect.TabIndex = 2;
+            this.tbCorrect.Text = "10";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(87, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Correct Answers:";
             // 
             // btnComputeScore
             // 
