@@ -24,21 +24,46 @@ namespace ProgressIndicator
             progressDelegate selectedDelegate;
             if (rbSpinBox.Checked)
             {
-                //TODO Do spin box
+                selectedDelegate = new progressDelegate(spinBoxUpdater);
             }
             else if (rbProgressBar.Checked)
             {
-                //TODO Do Progress bar
+                selectedDelegate = new progressDelegate(progressBarUpdater);
             }
             else
             {
-                //TODO Do track bar
+                //trackbar
+                selectedDelegate = new progressDelegate(trackBarUpdater);
             }
 
             resetControls();
             slowMethod(selectedDelegate);
         }
+        /// <summary>
+        /// Updates spin box control
+        /// </summary>
+        private void spinBoxUpdater()
+        {
+            //TODO Check this is correct as it might not account for step sizes =/= 1
+            numericUpDown.Value++;
+        }
 
+        /// <summary>
+        /// Updates progress bar control
+        /// </summary>
+        private void progressBarUpdater()
+        {
+            probOutput.PerformStep();
+        }
+
+        /// <summary>
+        /// updates a trackbar control
+        /// </summary>
+        private void trackBarUpdater()
+        {
+            //TODO Check this is correct as it might not account for step sizes =/= 1
+            trackBar1.Value++;
+        }
 
         /// <summary>
         /// Resets all three form controls to default values
@@ -58,9 +83,12 @@ namespace ProgressIndicator
             for (int i = 0; i < 10; i++)
             {
                 //Wait for a bit so progress is visible
-                System.Threading.Thread.Sleep(1000);
-                //Increment and display some progress
+                //TODO Replace this as it makes the UI unresponsive
+                System.Threading.Thread.Sleep(500);
+                //Increment the given progress diplayer
                 myProgressDelegate();
+                //Force form to update
+                Application.DoEvents();
             }
         }
     }
