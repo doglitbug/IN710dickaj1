@@ -13,16 +13,12 @@ namespace Predicates
     public partial class Form1 : Form
     {
         /// <summary>
-        /// Random number generator
+        /// Delegate for which selection we want
         /// </summary>
-        Random random;
-
         Predicate<int> selectionPredicate;
         public Form1()
         {
             InitializeComponent();
-            //Init rng
-            random = new Random();
         }
 
         /// <summary>
@@ -32,8 +28,9 @@ namespace Predicates
         /// <param name="e">Unused</param>
         private void btnGenerate_Click(object sender, EventArgs e)
         {
+            Random random = new Random();
             listboxInput.Items.Clear();
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i < 100; i++)
             {
                 //Generate number and add to listbox
                 int number = random.Next(1,100);
@@ -63,24 +60,32 @@ namespace Predicates
 
         private void btnEven_Click(object sender, EventArgs e)
         {
-            List<int> masterList=new List<int>();
-            List<int> editedList = new List<int>();
-
             selectionPredicate = new Predicate<int>(isEven);
-
-            //Get all items
-            masterList=listboxInput.Items.Cast<int>().ToList();
-            //get only the items we want
-            editedList=masterList.FindAll(selectionPredicate);
-            //Output
-            listboxOutput.DataSource = editedList;
+            process(selectionPredicate);
         }
 
         private void btnLessThanTen_Click(object sender, EventArgs e)
         {
             selectionPredicate = new Predicate<int>(isLessThanTen);
+            process(selectionPredicate);
         }
 
-       
+        private void process(Predicate<int> selectType)
+        {
+            //Clear list box
+            //This was interesting line as lb.Items.Clear() wont work
+            listboxOutput.DataSource = null;
+
+            List<int> numberList = new List<int>();
+
+            //Get all items as a list<>
+            numberList = listboxInput.Items.Cast<int>().ToList();
+
+            //Get only the items we want
+            numberList = numberList.FindAll(selectionPredicate);
+
+            //Output
+            listboxOutput.DataSource = numberList;
+        }
     }
 }
