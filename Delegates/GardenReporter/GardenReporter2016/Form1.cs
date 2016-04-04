@@ -47,12 +47,32 @@ namespace GardenReporter2016
 
         private void btnArea_Click(object sender, EventArgs e)
         {
-            /* YOUR CODE HERE */
+            //Hold report
+            List<String> report = new List<string>();
+            //Get report
+            report=gardenManager.GetAreaReport();
+            //Clear previous report
+            listBox1.Items.Clear();
+            //Output report
+            foreach (String str in report)
+            {
+                listBox1.Items.Add(str);
+            }
         }
 
         private void btnCharges_Click(object sender, EventArgs e)
         {
-            /* YOUR CODE HERE */
+            //Hold report
+            List<String> report = new List<string>();
+            //Get report
+            report = gardenManager.GetChargesReport();
+            //Clear previous report
+            listBox1.Items.Clear();
+            //Output report
+            foreach (String str in report)
+            {
+                listBox1.Items.Add(str);
+            }
         }
     }
 }
