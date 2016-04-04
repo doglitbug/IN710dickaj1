@@ -38,5 +38,25 @@ namespace Predicates
                 listboxInput.Items.Add(number);
             }
         }
+
+        /// <summary>
+        /// Checks is the given number is even
+        /// </summary>
+        /// <param name="number">Number to check</param>
+        /// <returns>True if even</returns>
+        private bool isEven(int number)
+        {
+            return (number % 2 == 0);
+        }
+
+        /// <summary>
+        /// Checks if the given number is less than 10
+        /// </summary>
+        /// <param name="number">Number to check</param>
+        /// <returns>True if less than 10</returns>
+        private bool lessThanTen(int number)
+        {
+            return (number < 10);
+        }
     }
 }
