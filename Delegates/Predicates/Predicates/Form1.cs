@@ -16,6 +16,8 @@ namespace Predicates
         /// Random number generator
         /// </summary>
         Random random;
+
+        Predicate<int> selectionPredicate;
         public Form1()
         {
             InitializeComponent();
@@ -54,9 +56,31 @@ namespace Predicates
         /// </summary>
         /// <param name="number">Number to check</param>
         /// <returns>True if less than 10</returns>
-        private bool lessThanTen(int number)
+        private bool isLessThanTen(int number)
         {
             return (number < 10);
         }
+
+        private void btnEven_Click(object sender, EventArgs e)
+        {
+            List<int> masterList=new List<int>();
+            List<int> editedList = new List<int>();
+
+            selectionPredicate = new Predicate<int>(isEven);
+
+            //Get all items
+            masterList=listboxInput.Items.Cast<int>().ToList();
+            //get only the items we want
+            editedList=masterList.FindAll(selectionPredicate);
+            //Output
+            listboxOutput.DataSource = editedList;
+        }
+
+        private void btnLessThanTen_Click(object sender, EventArgs e)
+        {
+            selectionPredicate = new Predicate<int>(isLessThanTen);
+        }
+
+       
     }
 }

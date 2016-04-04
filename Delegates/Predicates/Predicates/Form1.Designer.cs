@@ -57,6 +57,7 @@
             this.btnEven.TabIndex = 1;
             this.btnEven.Text = "Select Even Numbers";
             this.btnEven.UseVisualStyleBackColor = true;
+            this.btnEven.Click += new System.EventHandler(this.btnEven_Click);
             // 
             // btnLessThanTen
             // 
@@ -66,6 +67,7 @@
             this.btnLessThanTen.TabIndex = 2;
             this.btnLessThanTen.Text = "Select Numbers < 10";
             this.btnLessThanTen.UseVisualStyleBackColor = true;
+            this.btnLessThanTen.Click += new System.EventHandler(this.btnLessThanTen_Click);
             // 
             // groupBox1
             // 
