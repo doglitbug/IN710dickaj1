@@ -45,6 +45,7 @@
             this.btnAlarm.TabIndex = 0;
             this.btnAlarm.Text = "Fire Alarm";
             this.btnAlarm.UseVisualStyleBackColor = true;
+            this.btnAlarm.Click += new System.EventHandler(this.btnAlarm_Click);
             // 
             // groupBox1
             // 
