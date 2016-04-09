@@ -21,7 +21,7 @@ namespace FireAlarm
 
             //Create observer(s)
             InstructionsObserver observer1 = new InstructionsObserver(FireAlarm);
-            //TODO beep 
+            BeepObserver observer2 = new BeepObserver(FireAlarm);
         }
 
         private void btnAlarm_Click(object sender, EventArgs e)
