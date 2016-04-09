@@ -15,11 +15,17 @@ namespace CustomControlHandlers
         public Form1()
         {
             InitializeComponent();
+            //Create random number generator
+            Random rng = new Random();
+
+            //Create handlers anonymously with rng
+            new CustomHandler(btnTest, rng);
+            new CustomHandler(btnTest, rng);
         }
 
         private void btnTest_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("This is the Forms Handler");
+            MessageBox.Show("This is the Form's Handler");
         }
     }
 }
