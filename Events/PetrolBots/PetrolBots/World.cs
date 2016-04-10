@@ -25,8 +25,9 @@ namespace PetrolBots
         const int MAXSPEED = 10;
         const int NUMSHIPS = 5;
 
-        //TODO list of bots and ships
+        //List of bots and ships
         Ship[] ships;
+        Bot[] bots;
 
         public World(Random rng, Point world_size, Graphics g)
         {
@@ -62,7 +63,18 @@ namespace PetrolBots
 
         private void createBots()
         {
-            //TODO Finish
+            int botSize = 10;
+            bots = new Bot[NUMSHIPS];
+            for (int i=0;i<bots.Length;i++){
+                //Create start position
+                Point startPoint = new Point( (i*botSize+botSize),
+                                               world_size.Y-botSize*2);
+                //Create a color for the bot
+                int colorValue = (int)255 / (i * NUMSHIPS);
+                Color botColor = Color.FromArgb(colorValue, colorValue, 0);
+                //Create bot and pass in 
+                bots[i] = new Bot(startPoint, world_size, botSize, g, ships[i], botColor);
+            }
         }
 
         public void Run()

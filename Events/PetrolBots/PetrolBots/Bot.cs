@@ -10,13 +10,17 @@ namespace PetrolBots
     public class Bot:Entity
     {
         private Ship subject;
-        public Bot(Point startPosition, Point world_size, int size, Graphics g, Ship subject)
+        private Color botColor;
+        public Bot(Point startPosition, Point world_size, int size, Graphics g, Ship subject, Color botColor)
             : base(startPosition, world_size, size, g) {
-            //Keep reference to subject
+            //Keep reference to subject/color
             this.subject = subject;
+            this.botColor = botColor;
+
             //Create a new handlers
             Ship.OutOfFuelEventHandler OutOfFuelHandle = new Ship.OutOfFuelEventHandler(OutOfFuelCalled);
             Ship.FullOfFuelEventHandler FullOfFuelHandle = new Ship.FullOfFuelEventHandler(FullOfFuelCalled);
+            
             //Register handlers
             subject.OutOfFuelEvent += OutOfFuelHandle;
             subject.FullOfFuelEvent += FullOfFuelHandle;
