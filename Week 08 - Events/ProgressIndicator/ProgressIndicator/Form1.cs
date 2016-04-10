@@ -23,6 +23,7 @@ namespace ProgressIndicator
             //Create observers
             new NumericUpDownObserver(slowWorker, numericUpDown);
             new ProgressBarObserver(slowWorker, probOutput);
+            new TrackBarObserver(slowWorker, trackBar1);
             
         }
 
