@@ -12,14 +12,22 @@ namespace ProgressIndicator
 {
     public partial class Form1 : Form
     {
+        ProgressSubject slowWorker;
         public Form1()
         {
             InitializeComponent();
+
+            //Create subject
+            slowWorker = new ProgressSubject();
+
+            //Create observers
+            new NumericUpDownObserver(slowWorker, numericUpDown);
+
         }
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            //TODO slowWorker.SlowMethod();
+            slowWorker.SlowMethod();
         }
 
         /// <summary>

@@ -18,6 +18,7 @@ namespace ProgressIndicator
                 //Check and raise event
                 if (updateEvent != null)
                 {
+                    //EventArgs is expected to be null
                     updateEvent(this, new EventArgs());
                 }
             }

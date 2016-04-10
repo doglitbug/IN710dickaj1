@@ -9,15 +9,19 @@ namespace ProgressIndicator
     public abstract class ProgressObserverBase
     {
         protected ProgressSubject subject;
+        protected object thingToUpdate;
 
         /// <summary>
         /// Constructor
         /// </summary>
         /// <param name="subject">Subject to observe</param>
-        public ProgressObserverBase(ProgressSubject subject)
+        public ProgressObserverBase(ProgressSubject subject, object thingToUpdate)
         {
             //Keep reference to the subject
             this.subject = subject;
+            //Keep reference to the object to update
+            this.thingToUpdate = thingToUpdate;
+
             //Create a new handler
             EventHandler handler = new EventHandler(incrementDisplay);
             //Register handler with subject;
