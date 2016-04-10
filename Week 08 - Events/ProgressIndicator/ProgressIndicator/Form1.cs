@@ -31,6 +31,5 @@ namespace ProgressIndicator
             probOutput.Value=0;
             trackBar1.Value = 0;
         }
-
     }
 }
