@@ -21,12 +21,13 @@ namespace ProgressIndicator
             slowWorker = new ProgressSubject();
 
             //Create observers
-            new NumericUpDownObserver(slowWorker, numericUpDown);
-            new ProgressBarObserver(slowWorker, probOutput);
-            new TrackBarObserver(slowWorker, trackBar1);
+            //new NumericUpDownObserver(slowWorker, numericUpDown);
+            //new ProgressBarObserver(slowWorker, probOutput);
+            //new TrackBarObserver(slowWorker, trackBar1);
 
-            MessageBox.Show("*" + trackBar1.GetType().ToString() + "*");
-            
+            new CombinedObserver(slowWorker, numericUpDown);
+            new CombinedObserver(slowWorker, probOutput);
+            new CombinedObserver(slowWorker, trackBar1);
         }
 
         private void btnStart_Click(object sender, EventArgs e)

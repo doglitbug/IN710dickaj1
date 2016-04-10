@@ -36,17 +36,26 @@ namespace ProgressIndicator
             //https://social.msdn.microsoft.com/Forums/vstudio/en-US/77a76b92-f56b-4e83-8ef6-3a3ed279ed8c/how-do-i-use-an-objects-type-as-the-test-condition-in-a-switch-statement?forum=csharpgeneral
             String updateType=thingToUpdate.GetType().ToString();
             
-            //and appropriatly increment its display
+            //Switch on type, cast to obect and increment
             switch (updateType)
             {
                 case "System.Windows.Forms.NumericUpDown":
-
-                break;
-
-                case "System.Windows.Forms.ProgressBar":
+                    NumericUpDown thing = (NumericUpDown)thingToUpdate;
+                    thing.Value++;
+                    thing.Update();
                 break;
 
                 case "System.Windows.Forms.TrackBar":
+                    ((TrackBar)thingToUpdate).Value++;
+                break;
+
+                case "System.Windows.Forms.ProgressBar":
+                ((ProgressBar)thingToUpdate).PerformStep();
+                break;
+
+                default:
+                    //Unknown object
+                throw new ArgumentException();
                 break;
             }
         }
