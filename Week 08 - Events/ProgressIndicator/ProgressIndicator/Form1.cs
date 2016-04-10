@@ -24,6 +24,8 @@ namespace ProgressIndicator
             new NumericUpDownObserver(slowWorker, numericUpDown);
             new ProgressBarObserver(slowWorker, probOutput);
             new TrackBarObserver(slowWorker, trackBar1);
+
+            MessageBox.Show("*" + trackBar1.GetType().ToString() + "*");
             
         }
 
