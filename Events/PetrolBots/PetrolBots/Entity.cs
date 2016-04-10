@@ -15,7 +15,7 @@ namespace PetrolBots
         /// <summary>
         /// Objects location in the world
         /// </summary>
-        protected Point location;
+        public Point location;
 
         /// <summary>
         /// Max size of the world

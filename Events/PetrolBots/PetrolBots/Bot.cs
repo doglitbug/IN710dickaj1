@@ -11,11 +11,13 @@ namespace PetrolBots
     {
         private Ship subject;
         private Color botColor;
+        private Point startPosition;
         public Bot(Point startPosition, Point world_size, int size, Graphics g, Ship subject, Color botColor)
             : base(startPosition, world_size, size, g) {
             //Keep reference to subject/color
             this.subject = subject;
             this.botColor = botColor;
+            this.startPosition = startPosition;
 
             //Create a new handlers
             Ship.OutOfFuelEventHandler OutOfFuelHandle = new Ship.OutOfFuelEventHandler(OutOfFuelCalled);
@@ -27,21 +29,28 @@ namespace PetrolBots
             }
         public override void Draw()
         {
-            throw new NotImplementedException();
+            //Create a brush
+            SolidBrush botBrush = new SolidBrush(botColor);
+            //Draw bot
+            g.FillEllipse(botBrush, location.X - size*2, location.Y - size*2, size, size);
         }
 
         public override void Move()
         {
-            throw new NotImplementedException();
+            
         }
 
         public void OutOfFuelCalled(Ship subject, EventArgs ea)
         {
-            throw new NotImplementedException();
+            //Move to location
+            this.location = subject.location;
+            //Increment the fuel a bit
+            subject.reFuel(3);
         }
         public void FullOfFuelCalled(Ship subject, EventArgs ea)
         {
-            throw new NotImplementedException();
+            //Move home
+            this.location = startPosition;
         }
     }
 }

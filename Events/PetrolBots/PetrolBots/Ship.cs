@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace PetrolBots
 {
+    public enum EShipState{WANDERING,REFUELING};
     public class Ship : Entity
     {
         //Events that the ship can raise
@@ -25,6 +26,8 @@ namespace PetrolBots
         /// </summary>
         public Point delta;
 
+        //What is the ship currently doing?
+        public EShipState shipState;
 
         //TODO randomize the position/delta/size here?(will need rng)
         public Ship(Point startPosition, Point world_size, int size, Point delta, Graphics g)
@@ -32,6 +35,7 @@ namespace PetrolBots
         {
             this.delta = delta;
             this.fuel = 100;
+            this.shipState = EShipState.WANDERING;
         }
 
         public override void Draw()
@@ -49,24 +53,33 @@ namespace PetrolBots
 
         public override void Move()
         {
-            //Check to see if we are full of fuel from a refilling
-            if (fuel > 100)
+            //What are we cutrrently doing?
+            switch (shipState)
             {
-                raiseFullOfFuelEvent();
+                case EShipState.REFUELING:
+                    //We are out of fuel or waiting for a full top up
+                    raiseOutOfFuelEvent();
+                    break;
+                case EShipState.WANDERING:
+                    wander();
+                    break;
+                default:
+                    throw new IndexOutOfRangeException();
             }
-
-            //Calculate speed so that faster ships run out of fuel quicker
-            int speed = (int) Math.Sqrt((Math.Abs(delta.X) + Math.Abs(delta.Y)));
-            //Burn that fuel efficently
-            fuel = fuel - speed/2;
-
+        }
+        private void wander(){
             //Check we actually have fuel left to use!
             if (fuel <= 0)
             {
-                raiseOutOfFuelEvent();
+                shipState = EShipState.REFUELING;
             }
             else
             {
+                //Calculate speed so that faster ships run out of fuel quicker
+                int speed = (int)Math.Sqrt((Math.Abs(delta.X) + Math.Abs(delta.Y)));
+                //Burn that fuel efficently
+                fuel = fuel - speed / 2;
+
                 //Move ship
                 Point newLocation = new Point(location.X + delta.X,
                                             location.Y + delta.Y);
@@ -88,10 +101,25 @@ namespace PetrolBots
             }
         }
 
+        public void reFuel(int amount)
+        {
+            //Add the given amount to the ships supply
+            fuel += amount;
+            //Check to see if we are full
+            if (fuel >= 100)
+            {
+                //Spill the excess
+                fuel = 100;
 
+                //Let bot know we are full
+                raiseFullOfFuelEvent();                
+            }
+
+        }
         private void raiseOutOfFuelEvent()
         {
-            fuel = 0;
+            //Sit and wait
+            shipState = EShipState.REFUELING;
             //Check someone is listening before raising event or system will crash
             if (OutOfFuelEvent != null)
             {
@@ -101,7 +129,9 @@ namespace PetrolBots
 
         private void raiseFullOfFuelEvent()
         {
-            fuel = 100;
+            //Go back to wandering around
+            shipState = EShipState.WANDERING;
+
             //Check someone is listening before raising event or system will crash
             if (FullOfFuelEvent != null)
             {
