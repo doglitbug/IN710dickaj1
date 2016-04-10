@@ -33,5 +33,34 @@ namespace PetrolBots
             //Create a new World
             world = new World(random, world_size,mainCanvas);
         }
+
+        private void worldTimer_Tick(object sender, EventArgs e)
+        {
+            world.Run();
+            //TODO Check if needed
+            base.Refresh();
+        }
+
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+            //TODO Check about passing in e.Graphics from molecular dispersion...
+            world.Draw();
+        }
+
+//////////////////////////////// Menu items ///////////////////////////////////
+        private void startToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            worldTimer.Enabled = true;
+        }
+
+        private void stopToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            worldTimer.Enabled = false;
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

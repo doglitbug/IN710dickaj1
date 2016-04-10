@@ -27,14 +27,20 @@ namespace PetrolBots
         /// </summary>
         protected int size { get; set; }
 
-        public Entity(Point startPosition, Point world_size, int size)
+        /// <summary>
+        /// Graphics context to draw to
+        /// </summary>
+        protected Graphics g;
+
+        public Entity(Point startPosition, Point world_size, int size, Graphics g)
         {
             this.location = startPosition;
             this.world_size = world_size;
             this.size = size;
+            this.g = g;
         }
 
-        public abstract void Draw(Graphics g);
+        public abstract void Draw();
 
         public abstract void Move();
     }
