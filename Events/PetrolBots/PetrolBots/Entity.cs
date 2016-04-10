@@ -15,17 +15,17 @@ namespace PetrolBots
         /// <summary>
         /// Objects location in the world
         /// </summary>
-        protected Point location { get; set; }
+        protected Point location;
 
         /// <summary>
         /// Max size of the world
         /// </summary>
-        protected Point world_size { get; set; }
+        protected Point world_size;
 
         /// <summary>
         /// Size of the object
         /// </summary>
-        protected int size { get; set; }
+        protected int size;
 
         /// <summary>
         /// Graphics context to draw to
