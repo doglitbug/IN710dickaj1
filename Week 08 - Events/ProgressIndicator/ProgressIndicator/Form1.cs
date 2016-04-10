@@ -22,11 +22,13 @@ namespace ProgressIndicator
 
             //Create observers
             new NumericUpDownObserver(slowWorker, numericUpDown);
-
+            new ProgressBarObserver(slowWorker, probOutput);
+            
         }
 
         private void btnStart_Click(object sender, EventArgs e)
         {
+            resetControls();
             slowWorker.SlowMethod();
         }
 
