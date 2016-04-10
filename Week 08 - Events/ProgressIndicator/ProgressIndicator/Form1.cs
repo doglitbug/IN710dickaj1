@@ -21,10 +21,6 @@ namespace ProgressIndicator
             slowWorker = new ProgressSubject();
 
             //Create observers
-            //new NumericUpDownObserver(slowWorker, numericUpDown);
-            //new ProgressBarObserver(slowWorker, probOutput);
-            //new TrackBarObserver(slowWorker, trackBar1);
-
             new CombinedObserver(slowWorker, numericUpDown);
             new CombinedObserver(slowWorker, probOutput);
             new CombinedObserver(slowWorker, trackBar1);
