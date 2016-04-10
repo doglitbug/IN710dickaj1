@@ -10,8 +10,10 @@ namespace PetrolBots
     public class Ship : Entity
     {
         //Events that the ship can raise
-        public event EventHandler OutOfFuelEvent;
-        public event EventHandler FullOfFuelEvent;
+        public delegate void OutOfFuelEventHandler(Ship subject, EventArgs ea);
+        public delegate void FullOfFuelEventHandler(Ship subject, EventArgs ea);
+        public event OutOfFuelEventHandler OutOfFuelEvent;
+        public event FullOfFuelEventHandler FullOfFuelEvent;
 
         /// <summary>
         /// 0-100 represent how much fuel is in the Ship
