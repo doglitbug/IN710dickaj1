@@ -22,7 +22,7 @@ namespace PetrolBots
         /// </summary>
         Graphics g;
 
-        const int MAXSPEED = 15;
+        const int MAXSPEED = 10;
         const int NUMSHIPS = 5;
 
         //TODO list of bots and ships
@@ -36,21 +36,22 @@ namespace PetrolBots
 
             //Create ships
             createShips();
-            //TODO Create bots
+            //Create bots
+            createBots();
 
             //TODO Register listeners
         }
 
         private void createShips()
         {
-            int shipSize=20;
+            int shipSize=50;
             ships = new Ship[NUMSHIPS];
             for (int i = 0; i < ships.Length; i++)
             {
                 //Create start position
 
-               Point startPoint=new Point(rng.Next(-world_size.X+shipSize,world_size.X-shipSize+1),
-                                          rng.Next(-world_size.Y+shipSize,world_size.Y-shipSize+1));
+               Point startPoint=new Point(rng.Next(shipSize,world_size.X-shipSize+1),
+                                          rng.Next(shipSize,world_size.Y-shipSize+1));
                 //Create delta
                 Point delta = new Point(rng.Next(-MAXSPEED, MAXSPEED + 1),
                                         rng.Next(-MAXSPEED, MAXSPEED + 1));
@@ -59,19 +60,27 @@ namespace PetrolBots
             }
         }
 
+        private void createBots()
+        {
+            //TODO Finish
+        }
+
         public void Run()
         {
-            //TODO Loop through all shiups and call Move()
-
+            //Loop through all ships and call Move()
+            foreach (Ship s in ships)
+            {
+                s.Move();
+            }
             //TODO loop through all bots and call Move()?
         }
 
         public void Draw()
         {
-            //TODO Clear screen
-
-            //TODO Loop through all ships and call Draw()
-
+            //Loop through all ships and call Draw()
+            foreach(Ship s in ships){
+                s.Draw();
+            }
             //TODO Loop through all bots and call Draw();
         }
     }

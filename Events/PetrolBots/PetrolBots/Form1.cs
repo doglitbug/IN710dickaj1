@@ -38,7 +38,7 @@ namespace PetrolBots
         {
             world.Run();
             //TODO Check if needed
-            base.Refresh();
+            this.Refresh();
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
