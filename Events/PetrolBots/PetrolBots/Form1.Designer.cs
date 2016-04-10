@@ -37,6 +37,7 @@
             this.ClientSize = new System.Drawing.Size(484, 461);
             this.Name = "Form1";
             this.Text = "Petrol Bots";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
         }
