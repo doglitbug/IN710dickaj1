@@ -19,7 +19,18 @@ namespace XML
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //Create file dialog
+            OpenFileDialog ofd = new OpenFileDialog();
+            //Set filter options etc
+            ofd.Filter = "XML (.xml)|*.xml";
 
+            //Show window
+            if(ofd.ShowDialog()==DialogResult.OK)
+            {
+                String filename = ofd.FileName;
+                //TODO pass filename to XML Manager
+                MessageBox.Show(filename);
+            }
         }
     }
 }
