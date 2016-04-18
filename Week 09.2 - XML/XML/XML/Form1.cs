@@ -12,9 +12,11 @@ namespace XML
 {
     public partial class Form1 : Form
     {
+        XMLManager myXMLManager;
         public Form1()
         {
             InitializeComponent();
+            myXMLManager = new XMLManager();
         }
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
@@ -28,9 +30,49 @@ namespace XML
             if(ofd.ShowDialog()==DialogResult.OK)
             {
                 String filename = ofd.FileName;
-                //TODO pass filename to XML Manager
-                MessageBox.Show(filename);
+
+                //TODO Check it is the correct file?
+
+                myXMLManager.openFile(filename);
             }
+        }
+
+        private void listUpcomingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Clear dgv
+            dataGridView1.DataSource=null;
+            dataGridView1.Rows.Clear();
+            //Grab request
+            List<Gig> data = myXMLManager.loadUpcomingGigs();
+
+            dataGridView1.DataSource = data;
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void hardRockToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Clear dgv
+            dataGridView1.DataSource = null;
+            dataGridView1.Rows.Clear();
+            //Grab request
+            List<Gig> data = myXMLManager.loadHardRockGigs();
+
+            dataGridView1.DataSource = data;
+        }
+
+        private void currentMonthToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Clear dgv
+            dataGridView1.DataSource = null;
+            dataGridView1.Rows.Clear();
+            //Grab request
+            List<Gig> data = myXMLManager.loadCurrentMonth();
+
+            dataGridView1.DataSource = data;
         }
     }
 }
