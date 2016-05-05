@@ -115,7 +115,13 @@ namespace Art_Database_1
         //------------------------------------------------------
         private void btnOldest_Click(object sender, EventArgs e)
         {
-            
+            listBox1.Items.Clear();
+
+            Painting oldestPainting = (from Painting in paintings
+                                 orderby Painting.Year
+                                 select Painting).First();
+
+                listBox1.Items.Add(oldestPainting);
         }
 
         //------------------------------------------------------
