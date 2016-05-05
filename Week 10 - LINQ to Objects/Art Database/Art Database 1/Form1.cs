@@ -66,8 +66,8 @@ namespace Art_Database_1
         {
             listBox1.Items.Clear();
 
-            var allPaintings = from Painting in paintings
-                                    select Painting;
+            IEnumerable<Painting> allPaintings = from Painting in paintings
+                                                 select Painting;
 
             foreach (Painting painting in allPaintings)
             {
@@ -83,9 +83,9 @@ namespace Art_Database_1
         {
             listBox1.Items.Clear();
 
-            var artistsFromItaly = from Artist in artists
-                                   where String.Equals(Artist.Country,"Italy")
-                                   select Artist;
+            IEnumerable<Artist> artistsFromItaly = from Artist in artists
+                                                   where String.Equals(Artist.Country,"Italy")
+                                                   select Artist;
 
             foreach (var artist in artistsFromItaly)
             {
@@ -100,9 +100,9 @@ namespace Art_Database_1
         {
             listBox1.Items.Clear();
 
-            var paintingsBefore1800 = from Painting in paintings
-                                      where Painting.Year<1800
-                                      select Painting;
+            IEnumerable<Painting> paintingsBefore1800 = from Painting in paintings
+                                                        where Painting.Year<1800
+                                                        select Painting;
 
             foreach (Painting painting in paintingsBefore1800)
             {
@@ -118,8 +118,9 @@ namespace Art_Database_1
             listBox1.Items.Clear();
 
             Painting oldestPainting = (from Painting in paintings
-                                 orderby Painting.Year
-                                 select Painting).First();
+                                       orderby Painting.Year
+                                       select Painting).
+                                       First();
 
                 listBox1.Items.Add(oldestPainting);
         }
@@ -129,7 +130,20 @@ namespace Art_Database_1
         //------------------------------------------------------
         private void button6_Click(object sender, EventArgs e)
         {
-           
+            listBox1.Items.Clear();
+
+            //Get user requested data
+            String artistWanted = textBox1.Text;
+
+            IEnumerable<Painting> byThisArtist = from Painting in paintings
+                                                 where String.Equals(Painting.Artist, artistWanted)
+                                                 select Painting;
+
+            foreach (Painting painting in byThisArtist)
+            {
+                listBox1.Items.Add(painting);
+            }
+
         }
 
         //------------------------------------------------------
@@ -137,6 +151,26 @@ namespace Art_Database_1
         //------------------------------------------------------
         private void btnNbyCountry_Click(object sender, EventArgs e)
         {
+            listBox1.Items.Clear();
+
+            var nByCountry = (from Painting in paintings
+                             join Artist in artists
+                             on Painting.Artist equals Artist.LastName
+                             group Painting by Artist.Country)
+                             .OrderBy(y=>y.Count());
+
+            //Unpack results
+            foreach (var group in nByCountry)
+            {
+                //Get data from the group
+                String country = group.Key;
+                int countryCount = group.Count();
+
+                //Build output string  
+                String output = countryCount+" painting"+(countryCount>1?"s":"")+" from "+country;
+
+                listBox1.Items.Add(output);
+            }
             
         }
 
@@ -145,7 +179,29 @@ namespace Art_Database_1
         //------------------------------------------------------
         private void button8_Click(object sender, EventArgs e)
         {
-                      
+            listBox1.Items.Clear();
+
+            var artistGroupedByCountry = from Artist in artists
+                                         orderby Artist.Country
+                                         group Artist by Artist.Country;
+                                         
+
+
+            //Unpack results
+            foreach (var group in artistGroupedByCountry)
+            {
+                //Get data from the group
+                String country = group.Key;
+                //Output to listbox
+                listBox1.Items.Add(country+":");
+
+                //Unpack group
+                foreach (Artist artist in group)
+                {
+                    listBox1.Items.Add("\t\t" + artist.FirstName + " " + artist.LastName);
+                }
+            }
+
         }
 
         //------------------------------------------------------
