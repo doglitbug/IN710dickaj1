@@ -64,7 +64,15 @@ namespace Art_Database_1
         //------------------------------------------------------
         private void button1_Click(object sender, EventArgs e)
         {
-           
+            listBox1.Items.Clear();
+
+            var allPaintings = from Painting in paintings
+                                    select Painting;
+
+            foreach (Painting painting in allPaintings)
+            {
+                listBox1.Items.Add(painting);
+            }
         }
 
 
@@ -73,7 +81,16 @@ namespace Art_Database_1
         //------------------------------------------------------
         private void button2_Click(object sender, EventArgs e)
         {
+            listBox1.Items.Clear();
 
+            var artistsFromItaly = from Artist in artists
+                                   where String.Equals(Artist.Country,"Italy")
+                                   select Artist;
+
+            foreach (var artist in artistsFromItaly)
+            {
+                listBox1.Items.Add(artist);
+            }
         }
 
         //------------------------------------------------------
@@ -81,7 +98,16 @@ namespace Art_Database_1
         //------------------------------------------------------
         private void btnBefore1800_Click(object sender, EventArgs e)
         {
-            
+            listBox1.Items.Clear();
+
+            var paintingsBefore1800 = from Painting in paintings
+                                      where Painting.Year<1800
+                                      select Painting;
+
+            foreach (Painting painting in paintingsBefore1800)
+            {
+                listBox1.Items.Add(painting);
+            }
         }
 
         //------------------------------------------------------
