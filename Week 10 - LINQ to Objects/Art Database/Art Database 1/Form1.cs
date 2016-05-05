@@ -21,6 +21,7 @@ namespace Art_Database_1
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            #region Set up artists and paintings
             artists = new List<Artist>();
             artists.Add(new Artist { Country = "France", FirstName = "Camille", LastName = "Pissarro", YearOfBirth = 1830, YearOfDeath = 1903 });
             artists.Add(new Artist { Country = "France", FirstName = "Claude", LastName = "Monet", YearOfBirth = 1840, YearOfDeath = 1926 });
@@ -54,9 +55,7 @@ namespace Art_Database_1
             paintings.Add(new Painting { Artist = "Mondrian", Title = "Composition with Red, Yellow and Blue", Method = "Oil on canvas", Year = 1821, Width = 40, Height = 35 });
             paintings.Add(new Painting { Artist = "Pollock", Title = "The Key", Method = "Oil on canvas", Year = 1946, Width = 84, Height = 213 });
             paintings.Add(new Painting { Artist = "Picasso", Title = "The Three Musicians", Method = "Oil on canvas", Year = 1921, Width = 200, Height = 222 });
-
-
-
+            #endregion
         }
 
         //------------------------------------------------------
@@ -102,6 +101,7 @@ namespace Art_Database_1
 
             IEnumerable<Painting> paintingsBefore1800 = from Painting in paintings
                                                         where Painting.Year<1800
+                                                        orderby Painting.Year
                                                         select Painting;
 
             foreach (Painting painting in paintingsBefore1800)
@@ -185,8 +185,6 @@ namespace Art_Database_1
                                          orderby Artist.Country
                                          group Artist by Artist.Country;
                                          
-
-
             //Unpack results
             foreach (var group in artistGroupedByCountry)
             {
@@ -209,7 +207,19 @@ namespace Art_Database_1
         //------------------------------------------------------
         private void button7_Click(object sender, EventArgs e)
         {
-          
+            listBox1.Items.Clear();
+
+            IEnumerable<Painting> paintingsbyDutch = from Painting in paintings
+                                                     join Artist in artists
+                                                     on Painting.Artist equals Artist.LastName
+                                                     where String.Equals(Artist.Country, "Netherlands")
+                                                     orderby Painting.Year
+                                                     select Painting;
+
+            foreach (Painting painting in paintingsbyDutch)
+            {
+                listBox1.Items.Add(painting);
+            }
         }
 
         //------------------------------------------------------
@@ -217,7 +227,23 @@ namespace Art_Database_1
         //------------------------------------------------------
         private void button4_Click(object sender, EventArgs e)
         {
-          
+            listBox1.Items.Clear();
+            var joinTables = from Painting in paintings
+                             join Artist in artists
+                             on Painting.Artist equals Artist.LastName
+                             orderby Artist.LastName
+                             select new { Artist.LastName, Artist.FirstName, Artist.Country, Painting.Title };
+
+            foreach (var painting in joinTables)
+            {
+                //Built string
+                String output = String.Format("{0,-25}\t{1,-20}\t{2}",
+                    painting.FirstName + " " + painting.LastName,
+                    painting.Country,
+                    painting.Title);                
+
+                listBox1.Items.Add(output);
+            }
         }
 
         //------------------------------------------------------
@@ -225,9 +251,22 @@ namespace Art_Database_1
         //------------------------------------------------------
         private void button9_Click(object sender, EventArgs e)
         {
-          
-        }
+            listBox1.Items.Clear();
 
- 
+            var paintingsbyFrenchOrItalian = from Painting in paintings
+                                             join Artist in artists
+                                             on Painting.Artist equals Artist.LastName
+                                             where (String.Equals(Artist.Country, "France")
+                                              || String.Equals(Artist.Country, "Italy"))
+                                             orderby Painting.Artist
+                                             select new { Painting.Artist, Artist.Country, Painting.Title };
+
+            foreach (var thing in paintingsbyFrenchOrItalian)
+            {
+                //Build output
+                String output = thing.Artist + "\t\t" + thing.Country + "\t\t" + thing.Title;
+                listBox1.Items.Add(output);
+            }
+        }
     }
 }
