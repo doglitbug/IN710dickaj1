@@ -24,5 +24,11 @@ namespace UsingORM
             listBox1.DataSource=null;
             listBox1.DataSource = dbm.getAverageIntensty();
         }
+
+        private void btnThreelargestFires_Click(object sender, EventArgs e)
+        {
+            listBox1.DataSource = null;
+            listBox1.DataSource = dbm.getThreeLargestFires();
+        }
     }
 }

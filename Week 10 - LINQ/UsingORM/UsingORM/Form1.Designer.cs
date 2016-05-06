@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.btnAveIntensity = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnThreeLargestFires = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
@@ -45,14 +45,15 @@
             this.btnAveIntensity.UseVisualStyleBackColor = true;
             this.btnAveIntensity.Click += new System.EventHandler(this.btnAveIntensity_Click);
             // 
-            // button1
+            // btnThreeLargestFires
             // 
-            this.button1.Location = new System.Drawing.Point(12, 41);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(223, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "2.";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnThreeLargestFires.Location = new System.Drawing.Point(12, 41);
+            this.btnThreeLargestFires.Name = "btnThreeLargestFires";
+            this.btnThreeLargestFires.Size = new System.Drawing.Size(223, 23);
+            this.btnThreeLargestFires.TabIndex = 1;
+            this.btnThreeLargestFires.Text = "2. Complete records of 3 largest fires";
+            this.btnThreeLargestFires.UseVisualStyleBackColor = true;
+            this.btnThreeLargestFires.Click += new System.EventHandler(this.btnThreelargestFires_Click);
             // 
             // button2
             // 
@@ -74,21 +75,22 @@
             // 
             // listBox1
             // 
+            this.listBox1.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(12, 70);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(452, 342);
+            this.listBox1.Size = new System.Drawing.Size(718, 342);
             this.listBox1.TabIndex = 4;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(476, 422);
+            this.ClientSize = new System.Drawing.Size(742, 422);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnThreeLargestFires);
             this.Controls.Add(this.btnAveIntensity);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -99,7 +101,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnAveIntensity;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnThreeLargestFires;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ListBox listBox1;
