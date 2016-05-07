@@ -29,15 +29,15 @@ namespace UsingORM
         public List<String> getAverageIntensty()
         {
             //Hold output
-            List<String> output=new List<String>();
+            List<String> output = new List<String>();
 
             //Provide a title
             output.Add("1. Compute and display the average intensity for all strikes");
             output.Add("------------------------------------------------------------");
 
             //Perform SQl query
-            var averageIntensty = (from b in db.tblStrikes
-                                  select b.strikeIntensity).Average();
+            double averageIntensty = (from b in db.tblStrikes
+                                      select b.strikeIntensity).Average();
 
             //Format results for output
             output.Add(averageIntensty.ToString());
@@ -59,12 +59,12 @@ namespace UsingORM
             output.Add("---------------------------------------------------------------------------");
 
             //Perform SQl query
-            var threeLargest = (from fire in db.tblFires
-                                orderby fire.fireArea
-                                select fire).Take(3);
+            IEnumerable<tblFire> threeLargest = (from fire in db.tblFires
+                                                 orderby fire.fireArea
+                                                 select fire).Take(3);
 
             //Format results for output
-            foreach (var fire in threeLargest)
+            foreach (tblFire fire in threeLargest)
             {
                 //Build record
                 String record = fire.fireDate + "\t{" + fire.fireLatitude + ", " + fire.fireLongitude + "}\t" + fire.fireArea;
@@ -92,12 +92,42 @@ namespace UsingORM
                                   join strike in db.tblStrikes
                                   on picture.strikeID equals strike.strikeID
                                   select new { strike.strikeLatitude, strike.strikeLongitude, picture.pictureFileName };
-                                   
+
             //Format results for output
             foreach (var result in locationPicture)
             {
                 //Build record
                 String record = "{" + result.strikeLatitude + ", " + result.strikeLongitude + "}\t" + result.pictureFileName;
+                output.Add(record);
+            }
+            return output;
+        }
+
+        /// <summary>
+        /// List all fires that were caused by a lightning strike.
+        /// </summary>
+        /// <returns>String list of results</returns>
+        public List<String> getFireStrikes()
+        {
+            //Hold output
+            List<String> output = new List<String>();
+
+            //Provide a title
+            output.Add("4.	List all fires that were caused by a lightning strike");
+            output.Add("---------------------------------------------------------");
+
+            //Perform SQl query
+            IEnumerable<tblFire> fireStrikes = from fire in db.tblFires
+                                               join strike in db.tblStrikes
+                                               on new { A = fire.fireLatitude, B = fire.fireLongitude, C = fire.fireDate }
+                                               equals new { A = strike.strikeLatitude, B = strike.strikeLongitude, C = strike.strikeDate }
+                                               select fire;
+
+            //Format results for output
+            foreach (tblFire result in fireStrikes)
+            {
+                //Build record
+                String record = result.fireDate + "\t {" + result.fireLatitude + ", " + result.fireLongitude + "}\t" + result.fireArea;
                 output.Add(record);
             }
             return output;

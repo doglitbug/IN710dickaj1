@@ -31,7 +31,7 @@
             this.btnAveIntensity = new System.Windows.Forms.Button();
             this.btnThreeLargestFires = new System.Windows.Forms.Button();
             this.btnLocationPicture = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnFireStrikes = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
@@ -65,14 +65,15 @@
             this.btnLocationPicture.UseVisualStyleBackColor = true;
             this.btnLocationPicture.Click += new System.EventHandler(this.btnLocationPicture_Click);
             // 
-            // button3
+            // btnFireStrikes
             // 
-            this.button3.Location = new System.Drawing.Point(241, 41);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(223, 23);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "4.";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnFireStrikes.Location = new System.Drawing.Point(241, 41);
+            this.btnFireStrikes.Name = "btnFireStrikes";
+            this.btnFireStrikes.Size = new System.Drawing.Size(223, 23);
+            this.btnFireStrikes.TabIndex = 3;
+            this.btnFireStrikes.Text = "4. Fires caused by strikes";
+            this.btnFireStrikes.UseVisualStyleBackColor = true;
+            this.btnFireStrikes.Click += new System.EventHandler(this.btnFireStrikes_Click);
             // 
             // listBox1
             // 
@@ -89,7 +90,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(742, 422);
             this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnFireStrikes);
             this.Controls.Add(this.btnLocationPicture);
             this.Controls.Add(this.btnThreeLargestFires);
             this.Controls.Add(this.btnAveIntensity);
@@ -104,7 +105,7 @@
         private System.Windows.Forms.Button btnAveIntensity;
         private System.Windows.Forms.Button btnThreeLargestFires;
         private System.Windows.Forms.Button btnLocationPicture;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnFireStrikes;
         private System.Windows.Forms.ListBox listBox1;
     }
 }

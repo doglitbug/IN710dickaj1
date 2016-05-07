@@ -55,5 +55,16 @@ namespace UsingORM
             //Ask database manager for location and filename for each picture and display
             listBox1.DataSource = dbm.getLocationPicture();
         }
+
+        /// <summary>
+        /// Button click handler for all fires caused by strikes
+        /// </summary>
+        private void btnFireStrikes_Click(object sender, EventArgs e)
+        {
+            //Clear previous data
+            listBox1.DataSource = null;
+            //Ask database manager for fires caused by strikes
+            listBox1.DataSource = dbm.getFireStrikes();
+        }
     }
 }
