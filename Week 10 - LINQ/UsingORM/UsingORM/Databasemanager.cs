@@ -36,12 +36,19 @@ namespace UsingORM
             output.Add("------------------------------------------------------------");
 
             //Perform SQl query
-            double averageIntensty = (from b in db.tblStrikes
-                                      select b.strikeIntensity).Average();
+            try
+            {
+                double averageIntensty = (from b in db.tblStrikes
+                                          select b.strikeIntensity).Average();
 
-            //Format results for output
-            output.Add(averageIntensty.ToString());
-
+                //Format results for output
+                output.Add(averageIntensty.ToString());
+            }
+            catch (System.Data.SqlClient.SqlException e)
+            {
+                output.Add("SQL Client error: " + e);
+            }
+            
             return output;
         }
 
@@ -59,16 +66,23 @@ namespace UsingORM
             output.Add("---------------------------------------------------------------------------");
 
             //Perform SQl query
-            IEnumerable<tblFire> threeLargest = (from fire in db.tblFires
-                                                 orderby fire.fireArea
-                                                 select fire).Take(3);
-
-            //Format results for output
-            foreach (tblFire fire in threeLargest)
+            try
             {
-                //Build record
-                String record = fire.fireDate + "\t{" + fire.fireLatitude + ", " + fire.fireLongitude + "}\t" + fire.fireArea;
-                output.Add(record);
+                IEnumerable<tblFire> threeLargest = (from fire in db.tblFires
+                                                     orderby fire.fireArea
+                                                     select fire).Take(3);
+
+                //Format results for output
+                foreach (tblFire fire in threeLargest)
+                {
+                    //Build record
+                    String record = fire.fireDate + "\t{" + fire.fireLatitude + ", " + fire.fireLongitude + "}\t" + fire.fireArea;
+                    output.Add(record);
+                }
+            }
+            catch (System.Data.SqlClient.SqlException e)
+            {
+                output.Add("SQL Client error: " + e);
             }
 
             return output;
@@ -88,17 +102,24 @@ namespace UsingORM
             output.Add("-----------------------------------------------------------------");
 
             //Perform SQl query
-            var locationPicture = from picture in db.tblPictures
-                                  join strike in db.tblStrikes
-                                  on picture.strikeID equals strike.strikeID
-                                  select new { strike.strikeLatitude, strike.strikeLongitude, picture.pictureFileName };
-
-            //Format results for output
-            foreach (var result in locationPicture)
+            try
             {
-                //Build record
-                String record = "{" + result.strikeLatitude + ", " + result.strikeLongitude + "}\t" + result.pictureFileName;
-                output.Add(record);
+                var locationPicture = from picture in db.tblPictures
+                                      join strike in db.tblStrikes
+                                      on picture.strikeID equals strike.strikeID
+                                      select new { strike.strikeLatitude, strike.strikeLongitude, picture.pictureFileName };
+
+                //Format results for output
+                foreach (var result in locationPicture)
+                {
+                    //Build record
+                    String record = "{" + result.strikeLatitude + ", " + result.strikeLongitude + "}\t" + result.pictureFileName;
+                    output.Add(record);
+                }
+            }
+            catch (System.Data.SqlClient.SqlException e)
+            {
+                output.Add("SQL Client error: " + e);
             }
             return output;
         }
@@ -117,18 +138,25 @@ namespace UsingORM
             output.Add("---------------------------------------------------------");
 
             //Perform SQl query
-            IEnumerable<tblFire> fireStrikes = from fire in db.tblFires
-                                               join strike in db.tblStrikes
-                                               on new { A = fire.fireLatitude, B = fire.fireLongitude, C = fire.fireDate }
-                                               equals new { A = strike.strikeLatitude, B = strike.strikeLongitude, C = strike.strikeDate }
-                                               select fire;
-
-            //Format results for output
-            foreach (tblFire result in fireStrikes)
+            try
             {
-                //Build record
-                String record = result.fireDate + "\t {" + result.fireLatitude + ", " + result.fireLongitude + "}\t" + result.fireArea;
-                output.Add(record);
+                IEnumerable<tblFire> fireStrikes = from fire in db.tblFires
+                                                   join strike in db.tblStrikes
+                                                   on new { A = fire.fireLatitude, B = fire.fireLongitude, C = fire.fireDate }
+                                                   equals new { A = strike.strikeLatitude, B = strike.strikeLongitude, C = strike.strikeDate }
+                                                   select fire;
+
+                //Format results for output
+                foreach (tblFire result in fireStrikes)
+                {
+                    //Build record
+                    String record = result.fireDate + "\t {" + result.fireLatitude + ", " + result.fireLongitude + "}\t" + result.fireArea;
+                    output.Add(record);
+                }
+            }
+            catch (System.Data.SqlClient.SqlException e)
+            {
+                output.Add("SQL Client error: " + e);
             }
             return output;
         }
