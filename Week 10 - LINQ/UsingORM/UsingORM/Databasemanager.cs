@@ -55,11 +55,10 @@ namespace UsingORM
             List<String> output = new List<String>();
 
             //Provide a title
-            output.Add("2.	List the complete records of the largest three fires (in terms of area).");
-            output.Add("----------------------------------------------------------------------------");
+            output.Add("2.	List the complete records of the largest three fires (in terms of area)");
+            output.Add("---------------------------------------------------------------------------");
 
             //Perform SQl query
-            //TODO
             var threeLargest = (from fire in db.tblFires
                                 orderby fire.fireArea
                                 select fire).Take(3);
@@ -72,6 +71,35 @@ namespace UsingORM
                 output.Add(record);
             }
 
+            return output;
+        }
+
+        /// <summary>
+        /// Display the latitude, longitude and filename for each picture
+        /// </summary>
+        /// <returns>String list of results</returns>
+        public List<String> getLocationPicture()
+        {
+            //Hold output
+            List<String> output = new List<String>();
+
+            //Provide a title
+            output.Add("3.	Display the latitude, longitude and filename for each picture");
+            output.Add("-----------------------------------------------------------------");
+
+            //Perform SQl query
+            var locationPicture = from picture in db.tblPictures
+                                  join strike in db.tblStrikes
+                                  on picture.strikeID equals strike.strikeID
+                                  select new { strike.strikeLatitude, strike.strikeLongitude, picture.pictureFileName };
+                                   
+            //Format results for output
+            foreach (var result in locationPicture)
+            {
+                //Build record
+                String record = "{" + result.strikeLatitude + ", " + result.strikeLongitude + "}\t" + result.pictureFileName;
+                output.Add(record);
+            }
             return output;
         }
     }

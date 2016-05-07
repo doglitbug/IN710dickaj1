@@ -30,7 +30,7 @@
         {
             this.btnAveIntensity = new System.Windows.Forms.Button();
             this.btnThreeLargestFires = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnLocationPicture = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
@@ -55,14 +55,15 @@
             this.btnThreeLargestFires.UseVisualStyleBackColor = true;
             this.btnThreeLargestFires.Click += new System.EventHandler(this.btnThreelargestFires_Click);
             // 
-            // button2
+            // btnLocationPicture
             // 
-            this.button2.Location = new System.Drawing.Point(241, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(223, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "3.";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnLocationPicture.Location = new System.Drawing.Point(241, 12);
+            this.btnLocationPicture.Name = "btnLocationPicture";
+            this.btnLocationPicture.Size = new System.Drawing.Size(223, 23);
+            this.btnLocationPicture.TabIndex = 2;
+            this.btnLocationPicture.Text = "3. Location and picture for each fire";
+            this.btnLocationPicture.UseVisualStyleBackColor = true;
+            this.btnLocationPicture.Click += new System.EventHandler(this.btnLocationPicture_Click);
             // 
             // button3
             // 
@@ -89,7 +90,7 @@
             this.ClientSize = new System.Drawing.Size(742, 422);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnLocationPicture);
             this.Controls.Add(this.btnThreeLargestFires);
             this.Controls.Add(this.btnAveIntensity);
             this.Name = "Form1";
@@ -102,7 +103,7 @@
 
         private System.Windows.Forms.Button btnAveIntensity;
         private System.Windows.Forms.Button btnThreeLargestFires;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnLocationPicture;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ListBox listBox1;
     }
