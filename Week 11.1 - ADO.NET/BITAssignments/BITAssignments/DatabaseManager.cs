@@ -192,6 +192,8 @@ namespace BITAssignments
             String selectQuery = "SELECT tbl_assignment.name, tbl_assignment.date_due, tbl_paper.name AS paper_name " +
                                  "FROM tbl_assignment " +
                                  "JOIN tbl_paper ON tbl_assignment.paper_id = tbl_paper.id " +
+                                 "WHERE date_due >= CONVERT(date,GETDATE()) "+
+                                 "AND date_due <= DATEADD(week,2,CONVERT(date,GETDATE())) "+
                                  "ORDER BY date_due";
             //Make query and get reader
             bitdevConnection.Open();
@@ -203,8 +205,8 @@ namespace BITAssignments
             {
                 //Build formatted record
                 String record = sqlDataReader["paper_name"].ToString().Trim() + "\t" +
-                                sqlDataReader["name"].ToString().Trim() + "\t(" +
-                                sqlDataReader["due_date"].ToString().Trim() + ")";
+                                sqlDataReader["name"].ToString().Trim() + "\t" +
+                                sqlDataReader["date_due"].ToString().Trim();
 
                 output.Add(record);
             }
