@@ -49,11 +49,36 @@ namespace BITAssignments
                 dropTableIfExists(table);
             }
 
-            //TODO Create new tables
-            
+            //Create new tables
+            String tutorTable=  "CREATE TABLE tbl_tutor"+
+                                "("+
+                                "   id int NOT NULL PRIMARY KEY,"+
+                                "   name char(30) NOT NULL,"+
+                                "   email char(100) NOT NULL,"+
+                                ")";
+            runQuery(tutorTable);
+
+
+
+
             //TODO Populate with seed data
 
             throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Run the given query
+        /// </summary>
+        /// <param name="query">Query string to run</param>
+        private void runQuery(String query)
+        {
+            bitdevConnection.Open();
+            //Create command object
+            SqlCommand sqlCommand= new SqlCommand(query, bitdevConnection);
+            //Execute the query
+            sqlCommand.ExecuteNonQuery();
+            //Close connection
+            bitdevConnection.Close();
         }
 
         /// <summary>
@@ -63,24 +88,14 @@ namespace BITAssignments
         private void dropTableIfExists(String tableName)
         {
             //Create the query string
-            String query= String.Format("IF OBJECT_ID('{0}','U') IS NOT NULL DROP TABLE {0};",tableName);
-
-            #region TODO Move to runQuery method
-            bitdevConnection.Open();
-            //Create the command object
-            SqlCommand sqlCommand = new SqlCommand(query, bitdevConnection);
-            //Execute the query
-            sqlCommand.ExecuteNonQuery();
-            bitdevConnection.Close();
-            #endregion
-
-            //TODO Return success?
+            String query = String.Format("IF OBJECT_ID('{0}','U') IS NOT NULL DROP TABLE {0};", tableName);
+            //Execute
+            runQuery(query);
         }
-
 
         #region Reporting functions
         /// <summary>
-        /// Gets a report for All papers
+        /// Gets a report for all papers
         /// </summary>
         /// <returns>String List of results</returns>
         public List<String> reportAllPapers()
