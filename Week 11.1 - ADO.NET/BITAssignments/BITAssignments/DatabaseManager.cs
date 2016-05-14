@@ -50,20 +50,43 @@ namespace BITAssignments
             }
 
             //Create new tables
-            String tutorTable=  "CREATE TABLE tbl_tutor"+
-                                "("+
-                                "   id int NOT NULL PRIMARY KEY,"+
-                                "   name char(30) NOT NULL,"+
-                                "   email char(100) NOT NULL,"+
+            //TODO On update/on delete for dropping out of a paper
+            String tutorTable = "CREATE TABLE tbl_tutor" +
+                                "(" +
+                                "   id int NOT NULL PRIMARY KEY," +
+                                "   name char(30) NOT NULL," +
+                                "   email char(100) NOT NULL," +
                                 ")";
             runQuery(tutorTable);
 
+            String paperTable = "CREATE TABLE tbl_paper" +
+                                "(" +
+                                "   id int NOT NULL PRIMARY KEY," +
+                                "   name char(50) NOT NULL," +
+                                "   tutor_id int NOT NULL," +
+                                "   CONSTRAINT FK_tutor_paper FOREIGN KEY(tutor_id) REFERENCES tbl_tutor(id)" +
+                                ")";
+            runQuery(paperTable);
 
+            String assignmentTable = "CREATE TABLE tbl_assignment" +
+                                     "(" +
+                                     "  id int NOT NULL PRIMARY KEY," +
+                                     "  paper_id int NOT NULL," +
+                                     "  dateDue date NOT NULL," +
+                                     "  mark int NULL," +
+                                     "  name char(50) NOT NULL," +
+                                     "  CONSTRAINT FK_paper_assignment FOREIGN KEY(paper_id) REFERENCES tbl_paper(id)" +
+                                     ")";
+            runQuery(assignmentTable);
 
+            //Populate with seed data
+            //TODO Make method that takes parameters?
+            String seedTutorTable = "INSERT INTO tbl_tutor VALUES (1,'Bob','bob@school.nz');" +
+                                    "INSERT INTO tbl_tutor VALUES (2,'Mary',mary@school.nz);" +
+                                    "INSERT INTO tbl_tutor VALUES (3,'John',john@school.nz);";
+            runQuery(seedTutorTable);
 
-            //TODO Populate with seed data
-
-            throw new NotImplementedException();
+            
         }
 
         /// <summary>
