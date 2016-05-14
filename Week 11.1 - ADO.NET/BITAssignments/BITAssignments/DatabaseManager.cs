@@ -95,11 +95,11 @@ namespace BITAssignments
 
             String seedAssignmentTable = "INSERT INTO tbl_assignment VALUES (1,1,'SQL',50,'20160327');" +
                                          "INSERT INTO tbl_assignment VALUES (2,1,'Threads',25,'20160325');" +
-                                         "INSERT INTO tbl_assignment VALUES (3,1,'Exam',0,'20160521');" +
+                                         "INSERT INTO tbl_assignment VALUES (3,1,'Exam',null,'20160521');" +
                                          "INSERT INTO tbl_assignment VALUES (4,2,'Javascript',50,'20160314');" +
-                                         "INSERT INTO tbl_assignment VALUES (5,2,'Django',0,'20160528');" +
-                                         "INSERT INTO tbl_assignment VALUES (6,3,'Play store',0,'20161001');" +
-                                         "INSERT INTO tbl_assignment VALUES (7,4,'Final mark',0,'20161009');";
+                                         "INSERT INTO tbl_assignment VALUES (5,2,'Django',null,'20160528');" +
+                                         "INSERT INTO tbl_assignment VALUES (6,3,'Play store',null,'20161001');" +
+                                         "INSERT INTO tbl_assignment VALUES (7,4,'Final mark',null,'20161009');";
 
             runQuery(seedTutorTable);
             runQuery(seedPaperTable);
@@ -226,8 +226,35 @@ namespace BITAssignments
         {
             //Hold output
             List<String> output = new List<String>();
-            //TODO Build report and return
-            throw new NotImplementedException();
+            //Do headers
+            output.Add("3. List average mark for completed assignments for each paper");
+            output.Add("-------------------------------------------------------------");
+
+            //Build report and return
+            String selectQuery = "SELECT tbl_paper.name AS paper_name, AVG(tbl_assignment.mark) AS average_mark " +
+                                 "FROM tbl_assignment " +
+                                 "INNER JOIN tbl_paper ON tbl_assignment.paper_id = tbl_paper.id " +
+                                 "GROUP BY tbl_paper.name";
+            //Make query and get reader
+            bitdevConnection.Open();
+            SqlCommand selectCommand = new SqlCommand(selectQuery, bitdevConnection);
+            SqlDataReader sqlDataReader = selectCommand.ExecuteReader();
+
+            //Loop through all records
+            while (sqlDataReader.Read())
+            {
+                //Build formatted record
+                String record = sqlDataReader["paper_name"].ToString().Trim() + "\t" +
+                                sqlDataReader["average_mark"].ToString().Trim() + "\t";
+
+                output.Add(record);
+            }
+
+            //Clean up
+            sqlDataReader.Close();
+            bitdevConnection.Close();
+
+            return output;
         }
         #endregion
     }
