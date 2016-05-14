@@ -72,9 +72,9 @@ namespace BITAssignments
                                      "(" +
                                      "  id int NOT NULL PRIMARY KEY," +
                                      "  paper_id int NOT NULL," +
-                                     "  dateDue date NOT NULL," +
-                                     "  mark int NULL," +
                                      "  name char(50) NOT NULL," +
+                                     "  mark int NULL," +
+                                     "  dateDue date NOT NULL," +
                                      "  CONSTRAINT FK_paper_assignment FOREIGN KEY(paper_id) REFERENCES tbl_paper(id)" +
                                      ")";
             runQuery(assignmentTable);
@@ -82,11 +82,26 @@ namespace BITAssignments
             //Populate with seed data
             //TODO Make method that takes parameters?
             String seedTutorTable = "INSERT INTO tbl_tutor VALUES (1,'Bob','bob@school.nz');" +
-                                    "INSERT INTO tbl_tutor VALUES (2,'Mary',mary@school.nz);" +
-                                    "INSERT INTO tbl_tutor VALUES (3,'John',john@school.nz);";
+                                    "INSERT INTO tbl_tutor VALUES (2,'Mary','mary@school.nz');" +
+                                    "INSERT INTO tbl_tutor VALUES (3,'John','john@school.nz');";
             runQuery(seedTutorTable);
 
-            
+            String seedPaperTable = "INSERT INTO tbl_paper VALUES (1,'IN710 OOSD',1);" +
+                                    "INSERT INTO tbl_paper VALUES (2,'IN712 Web 3',2);" +
+                                    "INSERT INTO tbl_paper VALUES (3,'IN721 Mobile',3);" +
+                                    "INSERT INTO tbl_paper VALUES (4,'Project',3);";
+
+            runQuery(seedPaperTable);
+
+            String seedAssignmentTable = "INSERT INTO tbl_assignment VALUES (1,1,'SQL',50,'20160327');" +
+                                         "INSERT INTO tbl_assignment VALUES (2,1,'Threads',25,'20160325');" +
+                                         "INSERT INTO tbl_assignment VALUES (3,1,'Exam',0,'20160521');" +
+                                         "INSERT INTO tbl_assignment VALUES (4,2,'Javascript',50,'20160314');" +
+                                         "INSERT INTO tbl_assignment VALUES (5,2,'Django',0,'20160528');" +
+                                         "INSERT INTO tbl_assignment VALUES (6,3,'Play store',0,'20161001');" +
+                                         "INSERT INTO tbl_assignment VALUES (7,4,'Final mark',0,'20161009');";
+
+            runQuery(seedAssignmentTable);
         }
 
         /// <summary>
