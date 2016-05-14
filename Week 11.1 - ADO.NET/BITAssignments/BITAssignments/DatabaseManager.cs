@@ -42,7 +42,7 @@ namespace BITAssignments
         public void createSchema()
         {
             //Drop old tables
-            String[] tables = { "tbl_tutor", "tbl_paper", "tbl_assignment" };
+            String[] tables = { "tbl_assignment", "tbl_paper", "tbl_tutor"};
 
             foreach (String table in tables)
             {
