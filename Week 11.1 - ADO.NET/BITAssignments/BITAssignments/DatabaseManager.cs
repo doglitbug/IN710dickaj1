@@ -78,7 +78,7 @@ namespace BITAssignments
                                      "  paper_id int NOT NULL," +
                                      "  name char(50) NOT NULL," +
                                      "  mark int NULL," +
-                                     "  dateDue date NOT NULL," +
+                                     "  date_due date NOT NULL," +
                                      "  CONSTRAINT FK_paper_assignment FOREIGN KEY(paper_id) REFERENCES tbl_paper(id)" +
                                      ")";
             runQuery(assignmentTable);
@@ -184,8 +184,36 @@ namespace BITAssignments
         {
             //Hold output
             List<String> output = new List<String>();
-            //TODO Build report and return
-            throw new NotImplementedException();
+            //Do headers
+            output.Add("2. List all papers with assignments due in the next two weeks");
+            output.Add("-------------------------------------------------------------");
+
+            //Build report and return
+            String selectQuery = "SELECT tbl_assignment.name, tbl_assignment.date_due, tbl_paper.name AS paper_name " +
+                                 "FROM tbl_assignment " +
+                                 "JOIN tbl_paper ON tbl_assignment.paper_id = tbl_paper.id " +
+                                 "ORDER BY date_due";
+            //Make query and get reader
+            bitdevConnection.Open();
+            SqlCommand selectCommand = new SqlCommand(selectQuery, bitdevConnection);
+            SqlDataReader sqlDataReader = selectCommand.ExecuteReader();
+
+            //Loop through all records
+            while (sqlDataReader.Read())
+            {
+                //Build formatted record
+                String record = sqlDataReader["paper_name"].ToString().Trim() + "\t" +
+                                sqlDataReader["name"].ToString().Trim() + "\t(" +
+                                sqlDataReader["due_date"].ToString().Trim() + ")";
+
+                output.Add(record);
+            }
+
+            //Clean up
+            sqlDataReader.Close();
+            bitdevConnection.Close();
+
+            return output;
         }
 
         /// <summary>
