@@ -9,6 +9,9 @@ namespace BITAssignments
 {
     public class DatabaseManager
     {
+        /// <summary>
+        /// Database connection
+        /// </summary>
         SqlConnection bitdevConnection;
 
         /// <summary>
@@ -36,6 +39,7 @@ namespace BITAssignments
             bitdevConnection.Close();
         }
 
+        #region Database creation and seed functions
         /// <summary>
         /// Creates a new set of tables and enters seed data
         /// </summary>
@@ -80,18 +84,14 @@ namespace BITAssignments
             runQuery(assignmentTable);
 
             //Populate with seed data
-            //TODO Make method that takes parameters?
             String seedTutorTable = "INSERT INTO tbl_tutor VALUES (1,'Bob','bob@school.nz');" +
                                     "INSERT INTO tbl_tutor VALUES (2,'Mary','mary@school.nz');" +
                                     "INSERT INTO tbl_tutor VALUES (3,'John','john@school.nz');";
-            runQuery(seedTutorTable);
 
             String seedPaperTable = "INSERT INTO tbl_paper VALUES (1,'IN710 OOSD',1);" +
                                     "INSERT INTO tbl_paper VALUES (2,'IN712 Web 3',2);" +
                                     "INSERT INTO tbl_paper VALUES (3,'IN721 Mobile',3);" +
                                     "INSERT INTO tbl_paper VALUES (4,'Project',3);";
-
-            runQuery(seedPaperTable);
 
             String seedAssignmentTable = "INSERT INTO tbl_assignment VALUES (1,1,'SQL',50,'20160327');" +
                                          "INSERT INTO tbl_assignment VALUES (2,1,'Threads',25,'20160325');" +
@@ -101,6 +101,8 @@ namespace BITAssignments
                                          "INSERT INTO tbl_assignment VALUES (6,3,'Play store',0,'20161001');" +
                                          "INSERT INTO tbl_assignment VALUES (7,4,'Final mark',0,'20161009');";
 
+            runQuery(seedTutorTable);
+            runQuery(seedPaperTable);
             runQuery(seedAssignmentTable);
         }
 
@@ -131,6 +133,8 @@ namespace BITAssignments
             runQuery(query);
         }
 
+        #endregion
+
         #region Reporting functions
         /// <summary>
         /// Gets a report for all papers
@@ -140,8 +144,36 @@ namespace BITAssignments
         {
             //Hold output
             List<String> output = new List<String>();
-            //TODO Build report and return
-            throw new NotImplementedException();
+            //Do headers
+            output.Add("1. List all papers along with tutors name and email address");
+            output.Add("-----------------------------------------------------------");
+            
+            //Build report and return
+            String selectQuery = "SELECT tbl_paper.name AS paper_name, tbl_tutor.name AS tutor_name, tbl_tutor.email AS tutor_email " +
+                                 "FROM tbl_paper " +
+                                 "JOIN tbl_tutor ON tbl_paper.tutor_id = tbl_tutor.id " +
+                                 "ORDER BY paper_name";
+            //Make query and get reader
+            bitdevConnection.Open();
+            SqlCommand selectCommand = new SqlCommand(selectQuery, bitdevConnection);
+            SqlDataReader sqlDataReader = selectCommand.ExecuteReader();
+
+            //Loop through all records
+            while (sqlDataReader.Read())
+            {
+                //Build formatted record
+                String record = sqlDataReader["paper_name"].ToString().Trim() + "\t" +
+                                sqlDataReader["tutor_name"].ToString().Trim() + "\t(" +
+                                sqlDataReader["tutor_email"].ToString().Trim() + ")";
+
+                output.Add(record);                
+            }
+
+            //Clean up
+            sqlDataReader.Close();
+            bitdevConnection.Close();
+
+            return output;
         }
 
         /// <summary>
