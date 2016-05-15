@@ -27,19 +27,32 @@ namespace Animal_Noises
         {
             //Create new Animal
             mainAnimal = new Animal();
-            //Create thread
-            t = new Thread(mainAnimal.speak);
         }
 
         private void btnSpeak_Click(object sender, EventArgs e)
         {
-            //Start the thread
-            t.Start();
+            //Create thread if needed
+            if (t == null)
+            {
+                t = new Thread(mainAnimal.speak);
+                //Start the thread
+                t.Start();
+            }
         }
 
         private void btnWhat_Click(object sender, EventArgs e)
         {
             MessageBox.Show("It is a frog");
+        }
+
+        private void btnStop_Click(object sender, EventArgs e)
+        {
+            //Request killing off the thread is it is running
+            if (t != null)
+            {
+                t.Abort();
+                t = null;
+            }
         }
 
 
