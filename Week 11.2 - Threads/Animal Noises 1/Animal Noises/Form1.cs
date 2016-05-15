@@ -5,12 +5,17 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace Animal_Noises
 {
     public partial class Form1 : Form
     {
+        /// <summary>
+        /// Thread to hold Animal.speak
+        /// </summary>
+        Thread t;
         public Form1()
         {
             InitializeComponent();
@@ -20,12 +25,16 @@ namespace Animal_Noises
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //Create new Animal
             mainAnimal = new Animal();
+            //Create thread
+            t = new Thread(mainAnimal.speak);
         }
 
         private void btnSpeak_Click(object sender, EventArgs e)
         {
-            mainAnimal.speak();
+            //Start the thread
+            t.Start();
         }
 
         private void btnWhat_Click(object sender, EventArgs e)
