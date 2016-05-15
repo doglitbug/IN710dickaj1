@@ -13,6 +13,7 @@ namespace metronome
     public class MetronomeObserver
     {
         protected Metronome metronome;
+        protected delegate void setCallBack(object sender, metronomeEventArgs e);
 
         public MetronomeObserver(Metronome metronome)
         {
@@ -63,7 +64,17 @@ namespace metronome
 
         public override void onMetronomeEvent(object sender, metronomeEventArgs e)
         {
-                spinBox.Value++;  
+            if (spinBox.InvokeRequired)
+            {
+                //Set call back
+                setCallBack d = new setCallBack(onMetronomeEvent);
+                //Let spinBox know what we want to do
+                spinBox.Invoke(d, new object[] {sender,e});
+            }
+            else
+            {
+                spinBox.Value++;
+            }
         }
     } // end TCounter
 
@@ -82,7 +93,17 @@ namespace metronome
         public override void onMetronomeEvent(object sender, metronomeEventArgs e)
         {
             DateTime currDateTime = e.currentTime;
-            listBox.Items.Add(currDateTime.ToString());         
+
+            if (listBox.InvokeRequired)
+            {
+                //Set call back
+                setCallBack d = new setCallBack(onMetronomeEvent);
+                listBox.Invoke(d, new object[] { sender, e });
+            }
+            else
+            {
+                listBox.Items.Add(currDateTime.ToString());
+            }
         }
     }
 
