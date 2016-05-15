@@ -18,6 +18,7 @@ namespace metronome
         private Beeper mainBeeper;
         private Counter mainCounter;
         private TimeDisplay mainTimeDisplay;
+        private Thread mainMetronomeThread;
 
 
         public Form1()
@@ -28,6 +29,10 @@ namespace metronome
         private void Form1_Load(object sender, EventArgs e)
         {
             mainMetronome = new Metronome(1000, this);
+            //Create Thread
+            mainMetronomeThread = new Thread(mainMetronome.start);
+
+
             mainBeeper = new Beeper(mainMetronome, "blip1.wav");
             mainCounter = new Counter(mainMetronome, numericUpDown1);
             mainTimeDisplay = new TimeDisplay(mainMetronome, listBox1);    
@@ -37,7 +42,12 @@ namespace metronome
         {
            int currInterval = Convert.ToInt16(textBox1.Text);
            mainMetronome.Interval = currInterval;
-           mainMetronome.start();
+           //Start thread if needed(stops user starting multiple metronomes...)
+           //TODO Check additional state so that metronome can be started again after Abort?
+           if (mainMetronomeThread.ThreadState==ThreadState.Unstarted)
+           {
+               mainMetronomeThread.Start();
+           }
         }
 
         public void clearBuffer()
