@@ -58,6 +58,7 @@ namespace metronome
         private void button2_Click(object sender, EventArgs e)
         {
             // Code needed here to stop the metronome
+            mainMetronomeThread.Abort();
         }
 
     }
