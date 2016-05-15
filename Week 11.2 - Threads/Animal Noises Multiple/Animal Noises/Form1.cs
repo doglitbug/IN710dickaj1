@@ -19,11 +19,12 @@ namespace Animal_Noises
 
         private List<Animal> animalList;
         private List<Thread> threadList;
+        private SharedAccess sharedAccess;
       
 
         private void Form1_Load(object sender, EventArgs e)
         {
-           
+            sharedAccess = new SharedAccess();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -31,9 +32,9 @@ namespace Animal_Noises
             animalList = new List<Animal>();
             threadList = new List<Thread>();
 
-            animalList.Add(new Animal("frog.wav"));
-            animalList.Add(new Animal("duck.wav"));
-            animalList.Add(new Animal("meow.wav"));
+            animalList.Add(new Animal("frog.wav", sharedAccess));
+            animalList.Add(new Animal("duck.wav", sharedAccess));
+            animalList.Add(new Animal("meow.wav", sharedAccess));
 
             for (int i = 0; i < animalList.Count; i++)
                 threadList.Add(new Thread(animalList[i].speak)); 
