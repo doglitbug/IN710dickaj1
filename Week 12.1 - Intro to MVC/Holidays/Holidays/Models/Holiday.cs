@@ -13,9 +13,14 @@ namespace Holidays.Models
         public String name { get; set; }
 
         /// <summary>
-        /// Date of the holiday
+        /// Day of the holiday
         /// </summary>
-        public DateTime date { get; set; }
+        public int day { get; set; }
+
+        /// <summary>
+        /// Month of the holiday
+        /// </summary>
+        public int month { get; set; }
 
         /// <summary>
         /// Contains the filename of the image to show
@@ -28,8 +33,24 @@ namespace Holidays.Models
         /// <returns>Number of days until holiday occurs</returns>
         public int daysUntil()
         {
-            //TODO Stubbed out
-            return 5;
+            //Get time now
+            DateTime now = DateTime.Now;
+            //Get time of holiday
+            DateTime holiday = new DateTime(now.Year, month, day);
+            //Hold difference between the two
+            TimeSpan difference;
+
+            //Check to see if it has already passed this year!
+            if (holiday < now)
+            {
+                holiday.AddYears(1);
+                difference = holiday.Subtract(now);
+            }
+            else
+            {
+                difference = holiday.Subtract(now);
+            }
+                return difference.Days;
         }
 
         /// <summary>
@@ -43,7 +64,8 @@ namespace Holidays.Models
         {
             this.name = name;
             //TODO Check for invalid date here
-            this.date = new DateTime(DateTime.Now.Year, month, day);
+            this.day = day;
+            this.month = month;
             this.imageName = imageName;
         }
     }
