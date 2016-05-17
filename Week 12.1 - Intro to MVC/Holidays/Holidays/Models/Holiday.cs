@@ -18,10 +18,15 @@ namespace Holidays.Models
         public DateTime date { get; set; }
 
         /// <summary>
+        /// Contains the filename of the image to show
+        /// </summary>
+        public String imageName { get; set; }
+
+        /// <summary>
         /// Find out how many days until this holiday occurs
         /// </summary>
         /// <returns>Number of days until holiday occurs</returns>
-        public int dayUntil()
+        public int daysUntil()
         {
             //TODO Stubbed out
             return 5;
