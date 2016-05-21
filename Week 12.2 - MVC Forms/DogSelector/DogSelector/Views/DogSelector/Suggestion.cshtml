@@ -4,6 +4,19 @@
     Layout = null;
 }
 
+@functions{
+    /// <summary>
+    /// Get the string of an enum
+    /// </summary>
+    /// <param name="value">Value of the enum</param>
+    /// <returns>String value of the enum</returns>
+    private String getEnumString(Enum value)
+    {
+        System.Type type = value.GetType();
+        return Enum.GetName(type, value);
+    }
+
+}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,14 +39,14 @@
             <div class="col-sm-6"><img src="../Content/images/@Model.ImageName" class="dogPicture" /></div>
             <div class="col-sm-6">
                 <table class="table table-striped table-bordered">
-                    <tr><td>Activity level:</td><td></td></tr>
-                    <tr><td>Shedding level:</td><td></td></tr>
-                    <tr><td>Grooming level:</td><td></td></tr>
-                    <tr><td>Intelligence level:</td><td></td></tr>
-                    <tr><td>Good with Children:</td><td></td></tr>
-                    <tr><td>Drools:</td><td></td></tr>
-                    <tr><td>Coat Length:</td><td></td></tr>
-                    <tr><td>Size:</td><td></td></tr>
+                    <tr><td>Activity level:</td><td>@getEnumString(@Model.ActivityLevel)</td></tr>
+                    <tr><td>Shedding level:</td><td>@getEnumString(@Model.SheddingLevel)</td></tr>
+                    <tr><td>Grooming level:</td><td>@getEnumString(@Model.GroomingLevel)</td></tr>
+                    <tr><td>Intelligence level:</td><td>@getEnumString(@Model.IntelligenceLevel)</td></tr>
+                    <tr><td>Good with Children:</td><td>@Model.GoodWithChildren</td></tr>
+                    <tr><td>Drools:</td><td>@Model.Drools</td></tr>
+                    <tr><td>Coat Length:</td><td>@getEnumString(@Model.CoatLength)</td></tr>
+                    <tr><td>Size:</td><td>@getEnumString(@Model.Size)</td></tr>
                 </table>
             </div>
         </div>
