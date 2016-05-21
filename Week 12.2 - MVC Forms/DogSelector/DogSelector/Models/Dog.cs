@@ -11,7 +11,8 @@ namespace DogSelector.Models
         {
             Low,
             Medium,
-            High
+            High,
+            NoPreference
         }
 
         public enum ELength

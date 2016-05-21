@@ -24,12 +24,11 @@ namespace DogSelector.Controllers
             DatabaseManager db = new DatabaseManager();
 
             //Ask database for a dog based on the details provided from the user
-            
-            //TODO Choose a dog in here from what has been provided!
             Dog suggestedDog = db.suggestDog(searchDog);
 
             //Display results to user
             return View("Suggestion", suggestedDog);
+
         }
 	}
 }

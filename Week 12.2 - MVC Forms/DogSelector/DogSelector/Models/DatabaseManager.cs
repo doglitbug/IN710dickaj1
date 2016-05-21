@@ -30,12 +30,90 @@ namespace DogSelector.Models
         /// <returns>Suggested Dog from database</returns>
         public Dog suggestDog(Dog searchDog)
         {
-            Dog suggestDog;
+            //Keeps track of the top score of the best dog so far
+            double topScore = 0;
+            //Keeps track of which dog has that score
+            int topDog = 0;
 
-            //TODO Choose a dog!!
-            return dogList[1];
+            for (int i = 0; i < dogList.Count; i++)
+            {
+                //Grab a dog to score
+                Dog thisDog = dogList[i];
+                //Keep track of the score
+                double score;
+                //Get score for this dog
+                score = rankDog(thisDog, searchDog);
+
+                if (score > topScore)
+                {
+                    topScore = score;
+                    topDog = i;
+                }
+            }
+                //Return best dog
+                return dogList[topDog];
         }
 
+        /// <summary>
+        /// Calculate a score between a dog and the requested type of dog
+        /// </summary>
+        /// <param name="currentDog">Dog to calculate score for</param>
+        /// <param name="searchDog">Requested type of dog</param>
+        /// <returns>Score based on comparasion</returns>
+        private double rankDog(Dog currentDog, Dog searchDog)
+        {
+            double score = 0;
+            
+            //Check Activity level
+            if (currentDog.ActivityLevel == searchDog.ActivityLevel || searchDog.ActivityLevel==Dog.EScale.NoPreference)
+            {
+                score++;
+            }
+
+            //Check CoatLength
+            if (currentDog.CoatLength == searchDog.CoatLength)
+            {
+                score++;
+            }
+
+            //Check Drools
+            if (currentDog.Drools == searchDog.Drools)
+            {
+                score++;
+            }
+
+            //Check GoodWithChildren
+            if (currentDog.GoodWithChildren == searchDog.GoodWithChildren)
+            {
+                score++;
+            }
+
+            //Check GroomingLevel
+            if (currentDog.GroomingLevel == searchDog.GroomingLevel || searchDog.GroomingLevel==Dog.EScale.NoPreference)
+            {
+                score++;
+            }
+
+            //Check IntelligenceLevel
+            if (currentDog.IntelligenceLevel == searchDog.IntelligenceLevel || searchDog.IntelligenceLevel==Dog.EScale.NoPreference)
+            {
+                score++;
+            }
+
+            //Check SheddingLevel
+            if (currentDog.SheddingLevel == searchDog.SheddingLevel || searchDog.SheddingLevel == Dog.EScale.NoPreference)
+            {
+                score++;
+            }
+
+            //Check Size
+            if (currentDog.Size == searchDog.Size)
+            {
+                score++;
+            }
+
+            return score;
+        }
         /// <summary>
         /// Populate the database
         /// </summary>
