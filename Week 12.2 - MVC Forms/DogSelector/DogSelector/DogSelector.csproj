@@ -136,7 +136,6 @@
     </Compile>
     <Compile Include="Models\DatabaseManager.cs" />
     <Compile Include="Models\Dog.cs" />
-    <Compile Include="Models\Enums.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

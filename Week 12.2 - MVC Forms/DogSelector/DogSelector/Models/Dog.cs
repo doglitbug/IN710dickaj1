@@ -23,9 +23,11 @@ namespace DogSelector.Models
 
         public enum ESize
         {
+            Miniature,
             Small,
             Medium,
-            Large
+            Large,
+            Giant
         }
         public String BreedName { get; set; }
         public String DisplayName { get; set; }

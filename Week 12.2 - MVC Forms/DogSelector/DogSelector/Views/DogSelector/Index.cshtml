@@ -1,17 +1,146 @@
-﻿
-@{
+﻿@{
     Layout = null;
 }
 
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Dog Selector</title>
+
+    <!-- Bootstrap -->
+    <link href="../Content/bootstrap.min.css" rel="stylesheet">
+
 </head>
 <body>
-    <div> 
-    </div>
+    <div class="container">
+        <h1>Welcome to the IN710 Dog Selector</h1>
+        <h2>We'll help you choose the perfect dog</h2>
+        <form class="form-horizontal" role="form" action="@">
+            <fieldset>
+                <legend>Preferences</legend>
+                <div class="form-group">
+                    <div>Must be good with children:</div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="GoodWithChildren" value="true" checked/>
+                            Yes
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="GoodWithChildren" value="false"/>
+                            No
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div>Drooling:</div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="Drools" value="false" checked/>
+                            No Slobbering!
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="Drools" value="true"/>
+                            Don't mind
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div>Coat Length:</div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="CoatLength" value="Short" checked/>
+                            Short
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="CoatLength" value="Medium" />
+                            Medium
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="CoatLength" value="Long" />
+                            Long
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div>Preferences</div>
+                    <table class="table table-striped table-bordered">
+                        <thead>
+                        <tr>
+                            <th></th>
+                            <th>Low</th>
+                            <th>Medium</th>
+                            <th>High</th>
+                            <th>No preference</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Activity Level</td>
+                                <td><input type="radio" name="ActivityLevel" value="Low" checked/></td>
+                                <td><input type="radio" name="ActivityLevel" value="Medium" /></td>
+                                <td><input type="radio" name="ActivityLevel" value="High" /></td>
+                                <td><input type="radio" name="ActivityLevel" value="NoPreference" /></td>
+                            </tr>
+                            <tr>
+                                <td>Shedding Level</td>
+                                <td><input type="radio" name="SheddingLevel" value="Low" checked/></td>
+                                <td><input type="radio" name="SheddingLevel" value="Medium" /></td>
+                                <td><input type="radio" name="SheddingLevel" value="High" /></td>
+                                <td><input type="radio" name="SheddingLevel" value="NoPreference" /></td>
+                            </tr>
+                            <tr>
+                                <td>Grooming Level</td>
+                                <td><input type="radio" name="GroomingLevel" value="Low" checked/></td>
+                                <td><input type="radio" name="GroomingLevel" value="Medium" /></td>
+                                <td><input type="radio" name="GroomingLevel" value="High" /></td>
+                                <td><input type="radio" name="GroomingLevel" value="NoPreference" /></td>
+                            </tr>
+                            <tr>
+                                <td>Intelligence Level</td>
+                                <td><input type="radio" name="IntelligenceLevel" value="Low" checked/></td>
+                                <td><input type="radio" name="IntelligenceLevel" value="Medium" /></td>
+                                <td><input type="radio" name="IntelligenceLevel" value="High" /></td>
+                                <td><input type="radio" name="IntelligenceLevel" value="NoPreference" /></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="form-group">
+                    <div>Preferred size</div>
+                    <select name="Size">
+                        <option value="Miniature" selected>Miniature</option>
+                        <option value="Small">Small</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Large">Large</option>
+                        <option value="Giant">Giant</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-default">Find my dog!</button>
+                </div>
+            </fieldset>
+        </form>
+    </div><!-- /container-->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../Scripts/bootstrap.min.js"></script>
 </body>
 </html>
