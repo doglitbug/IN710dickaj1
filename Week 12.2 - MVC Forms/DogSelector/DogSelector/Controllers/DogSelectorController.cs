@@ -20,22 +20,15 @@ namespace DogSelector.Controllers
         [HttpPost]
         public ActionResult Index(Dog searchDog)
         {
-            //TODO Choose a dog in here from what has been provided!
-            Dog suggestedDog = new Dog()
-            {
-                BreedName = "BichonFrise",
-                DisplayName = "Bichon Frise",
-                ActivityLevel = Dog.EScale.High,
-                CoatLength = Dog.ELength.Medium,
-                Drools = false,
-                GoodWithChildren = true,
-                GroomingLevel = Dog.EScale.High,
-                IntelligenceLevel = Dog.EScale.High,
-                SheddingLevel = Dog.EScale.Low,
-                Size = Dog.ESize.Small,
-                ImageName = "Bichonfrise.jpg"
-            };
+            //Create new database(this seems pretty inefficient)
+            DatabaseManager db = new DatabaseManager();
 
+            //Ask database for a dog based on the details provided from the user
+            
+            //TODO Choose a dog in here from what has been provided!
+            Dog suggestedDog = db.suggestDog(searchDog);
+
+            //Display results to user
             return View("Suggestion", suggestedDog);
         }
 	}

@@ -8,7 +8,39 @@ namespace DogSelector.Models
 {
     public class DatabaseManager
     {
-        public List<Dog> makeDatabase()
+        /// <summary>
+        /// Holds data for the database
+        /// </summary>
+        private List<Dog> dogList;
+
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        public DatabaseManager()
+        {
+            //Init and populate database
+            dogList=new List<Dog>();
+            dogList = makeDatabase();
+        }
+
+        /// <summary>
+        /// Suggest a Dog
+        /// </summary>
+        /// <param name="searchDog">Dog with search parameters within it</param>
+        /// <returns>Suggested Dog from database</returns>
+        public Dog suggestDog(Dog searchDog)
+        {
+            Dog suggestDog;
+
+            //TODO Choose a dog!!
+            return dogList[1];
+        }
+
+        /// <summary>
+        /// Populate the database
+        /// </summary>
+        /// <returns>List of database</returns>
+        private List<Dog> makeDatabase()
         {
             List<Dog> newDatabase = new List<Dog>();
             #region Population of Dog database
