@@ -98,6 +98,7 @@
     <Content Include="Content\images\CavalierKingCharlesSpaniel.jpg" />
     <Content Include="Content\images\ChowChow.jpg" />
     <Content Include="Content\images\Dalmation.jpg" />
+    <Content Include="Content\myStyles.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\images\GoldenRetriever.jpg" />
@@ -127,6 +128,7 @@
     <Content Include="Content\images\WestHighlandWhiteTerrier.jpg" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\DogSelector\Index.cshtml" />
+    <Content Include="Views\DogSelector\Suggestion.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
